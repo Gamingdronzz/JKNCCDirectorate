@@ -1,36 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <group android:checkableBehavior="single">
+    <group
+        android:id="@+id/primary"
+        android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/home"
+            android:title="Home" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
+            android:id="@+id/adg"
+            android:title="ADG Corner" />
+        <item
+            android:id="@+id/about"
+            android:title="About Us">
+            <menu>
+                <item
+                    android:id="@+id/aim"
+                    android:title="Aim" />
+                <item
+                    android:id="@+id/song"
+                    android:title="Song" />
+                <item
+                    android:id="@+id/pledge"
+                    android:title="Pledge" />
+
+            </menu>
+        </item>
+
+        <item
+            android:id="@+id/org"
+            android:title="Organisation">
+            <menu>
+                <item
+                    android:id="@+id/jammu"
+                    android:title="Jammu" />
+                <item
+                    android:id="@+id/kashmir"
+                    android:title="Kashmir" />
+            </menu>
+        </item>
+
+        <item
+            android:id="@+id/coverage"
+            android:title="Coverage" />
+        <item
+            android:id="@+id/gallery"
             android:title="Gallery" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/rdc"
+            android:title="RDC 2017" />
+
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/rti"
+            android:title="RTI" />
+        <item
+            android:id="@+id/downloads"
+            android:title="Downloads" />
     </group>
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>
+    <group
+        android:id="@+id/secondary"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/contact"
+            android:title="Contact Us" />
 
+        <item
+            android:id="@+id/disclaimer"
+            android:title="Disclaimer" />
+        <item
+            android:id="@+id/feedback"
+            android:title="Feedback" />
+        <item
+            android:id="@+id/events"
+            android:title="Events" />
+    </group>
 </menu>
