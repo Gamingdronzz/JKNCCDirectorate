@@ -7,4 +7,26 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string name="aim">Aim</string>
+    <string name="song">Song</string>
+    <string name="pledge">Pledge</string>
+    <string name="jammu">Jammu</string>
+    <string name="kashmir">Kashmir</string>
+
+    <array name="menu">
+        <item>Home</item>
+        <item>ADG Corner</item>
+        <item>About Us</item>
+        <item>Organisation</item>
+        <item>Coverage</item>
+        <item>Gallery</item>
+        <item>RDC 2017</item>
+        <item>RTI</item>
+        <item>Downloads</item>
+        <item>Contact Us</item>
+        <item>Disclaimer</item>
+        <item>Feedback</item>
+        <item>Events</item>
+    </array>
 </resources>
