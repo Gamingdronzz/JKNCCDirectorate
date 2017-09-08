@@ -25,6 +25,7 @@ import com.jknccdirectorate.fragment.DownloadsFragment;
 import com.jknccdirectorate.fragment.EventsFragment;
 import com.jknccdirectorate.fragment.FeedbackFragment;
 import com.jknccdirectorate.fragment.GalleryFragment;
+import com.jknccdirectorate.fragment.HomeFragment;
 import com.jknccdirectorate.fragment.JammuFragment;
 import com.jknccdirectorate.fragment.KashmirFragment;
 import com.jknccdirectorate.fragment.PledgeFragment;
@@ -112,11 +113,12 @@ public class MainActivity extends AppCompatActivity {
                 Fragment fragment = new Fragment();
                 FragmentManager fm = getSupportFragmentManager();
                 FragmentTransaction ft;
+                ft = fm.beginTransaction();
                 switch (i) {
                     case 0:
-                        Intent intent = new Intent(MainActivity.this, MainActivity.class);
-                        startActivity(intent);
-                        finish();
+                        fragment = new HomeFragment();
+                        drawer.closeDrawer(GravityCompat.START);
+                        break;
 
                     case 1:
                         fragment = new AdgCornerFragment();
@@ -160,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                 }
-                ft = fm.beginTransaction();
+
                 ft.replace(R.id.content_frame, fragment);
                 ft.commit();
 
