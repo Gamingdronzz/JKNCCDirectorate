@@ -1,7 +1,11 @@
 package com.jknccdirectorate;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -12,6 +16,21 @@ import android.widget.ExpandableListView;
 
 import com.jknccdirectorate.Model.ExpandedMenuModel;
 import com.jknccdirectorate.adapter.ExpandableListAdapter;
+import com.jknccdirectorate.fragment.AdgCornerFragment;
+import com.jknccdirectorate.fragment.AimFragment;
+import com.jknccdirectorate.fragment.ContactFragment;
+import com.jknccdirectorate.fragment.CoverageFragment;
+import com.jknccdirectorate.fragment.DisclaimerFragment;
+import com.jknccdirectorate.fragment.DownloadsFragment;
+import com.jknccdirectorate.fragment.EventsFragment;
+import com.jknccdirectorate.fragment.FeedbackFragment;
+import com.jknccdirectorate.fragment.GalleryFragment;
+import com.jknccdirectorate.fragment.JammuFragment;
+import com.jknccdirectorate.fragment.KashmirFragment;
+import com.jknccdirectorate.fragment.PledgeFragment;
+import com.jknccdirectorate.fragment.RdcFragment;
+import com.jknccdirectorate.fragment.RtiFragment;
+import com.jknccdirectorate.fragment.SongFragment;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -52,13 +71,99 @@ public class MainActivity extends AppCompatActivity {
         expandableList.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
+                Fragment fragment = new Fragment();
+                FragmentManager fm = getSupportFragmentManager();
+                FragmentTransaction ft;
+                switch (i) {
+                    case 2:
+                        switch (i1) {
+                            case 0:
+                                fragment = new AimFragment();
+                                break;
+                            case 1:
+                                fragment = new SongFragment();
+                                break;
+                            case 2:
+                                fragment = new PledgeFragment();
+                                break;
+                        }
+                        break;
+                    case 3:
+                        switch (i1) {
+                            case 0:
+                                fragment = new JammuFragment();
+                                break;
+                            case 1:
+                                fragment = new KashmirFragment();
+                                break;
+                        }
+                }
                 drawer.closeDrawer(GravityCompat.START);
+                ft = fm.beginTransaction();
+                ft.replace(R.id.content_frame, fragment);
+                ft.commit();
                 return false;
             }
         });
         expandableList.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
             @Override
             public boolean onGroupClick(ExpandableListView expandableListView, View view, int i, long l) {
+
+                Fragment fragment = new Fragment();
+                FragmentManager fm = getSupportFragmentManager();
+                FragmentTransaction ft;
+                switch (i) {
+                    case 0:
+                        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
+
+                    case 1:
+                        fragment = new AdgCornerFragment();
+                        drawer.closeDrawer(GravityCompat.START);
+                        break;
+                    case 4:
+                        fragment = new CoverageFragment();
+                        drawer.closeDrawer(GravityCompat.START);
+                        break;
+                    case 5:
+                        fragment = new GalleryFragment();
+                        drawer.closeDrawer(GravityCompat.START);
+                        break;
+                    case 6:
+                        fragment = new RdcFragment();
+                        drawer.closeDrawer(GravityCompat.START);
+                        break;
+                    case 7:
+                        fragment = new RtiFragment();
+                        drawer.closeDrawer(GravityCompat.START);
+                        break;
+                    case 8:
+                        fragment = new DownloadsFragment();
+                        drawer.closeDrawer(GravityCompat.START);
+                        break;
+                    case 9:
+                        fragment = new ContactFragment();
+                        drawer.closeDrawer(GravityCompat.START);
+                        break;
+                    case 10:
+                        fragment = new DisclaimerFragment();
+                        drawer.closeDrawer(GravityCompat.START);
+                        break;
+                    case 11:
+                        fragment = new FeedbackFragment();
+                        drawer.closeDrawer(GravityCompat.START);
+                        break;
+                    case 12:
+                        fragment = new EventsFragment();
+                        drawer.closeDrawer(GravityCompat.START);
+                        break;
+
+                }
+                ft = fm.beginTransaction();
+                ft.replace(R.id.content_frame, fragment);
+                ft.commit();
+
                 return false;
             }
         });
@@ -102,6 +207,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void setActionBarTitle(String title) {
+        getSupportActionBar().setTitle(title);
+    }
   /*  private void setupDrawerContent(NavigationView navigationView) {
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {

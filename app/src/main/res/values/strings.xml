@@ -13,20 +13,37 @@
     <string name="pledge">Pledge</string>
     <string name="jammu">Jammu</string>
     <string name="kashmir">Kashmir</string>
+    <string name="home">Home</string>
+    <string name="adg">ADG Corner</string>
+    <string name="about">About Us</string>
+    <string name="org">Organisation</string>
+    <string name="coverage">Coverage</string>
+    <string name="gallery">Gallery</string>
+    <string name="rdc">RDC 2017</string>
+    <string name="rti">RTI</string>
+    <string name="downloads">Downloads</string>
+    <string name="contact">Contact Us</string>
+    <string name="disclaimer">Disclaimer</string>
+    <string name="feedback">Feedback</string>
+    <string name="events">Events</string>
 
     <array name="menu">
-        <item>Home</item>
-        <item>ADG Corner</item>
-        <item>About Us</item>
-        <item>Organisation</item>
-        <item>Coverage</item>
-        <item>Gallery</item>
-        <item>RDC 2017</item>
-        <item>RTI</item>
-        <item>Downloads</item>
-        <item>Contact Us</item>
-        <item>Disclaimer</item>
-        <item>Feedback</item>
-        <item>Events</item>
+        <item>@string/home</item>
+        <item>@string/adg</item>
+        <item>@string/about</item>
+        <item>@string/org</item>
+        <item>@string/coverage</item>
+        <item>@string/gallery</item>
+        <item>@string/rdc</item>
+        <item>@string/rti</item>
+        <item>@string/downloads</item>
+        <item>@string/contact</item>
+        <item>@string/disclaimer</item>
+        <item>@string/feedback</item>
+        <item>@string/events</item>
+
     </array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
