@@ -1,4 +1,4 @@
-package com.jknccdirectorate.fragment;
+package com.jknccdirectorate.Fragment;
 
 
 import android.os.Bundle;
@@ -13,10 +13,10 @@ import com.jknccdirectorate.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class DownloadsFragment extends Fragment {
+public class CoverageFragment extends Fragment {
 
 
-    public DownloadsFragment() {
+    public CoverageFragment() {
         // Required empty public constructor
     }
 
@@ -24,15 +24,14 @@ public class DownloadsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_downloads, container, false);
+        View view = inflater.inflate(R.layout.fragment_coverage, container, false);
         return view;
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        ((MainActivity) getActivity()).setActionBarTitle(getResources().getString(R.string.downloads));
+        ((MainActivity) getActivity()).setActionBarTitle(getResources().getString(R.string.coverage));
     }
 
     @Override

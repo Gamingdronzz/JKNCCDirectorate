@@ -1,4 +1,5 @@
-package com.jknccdirectorate.fragment;
+package com.jknccdirectorate.Fragment;
+
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,16 +10,27 @@ import android.view.ViewGroup;
 import com.jknccdirectorate.MainActivity;
 import com.jknccdirectorate.R;
 
-public class JammuFragment extends Fragment {
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class ContactFragment extends Fragment {
+
+
+    public ContactFragment() {
+        // Required empty public constructor
+    }
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_jammu, container, false);
+        return inflater.inflate(R.layout.fragment_contact, container, false);
     }
+    @Override
     public void onResume() {
         super.onResume();
-        ((MainActivity) getActivity()).setActionBarTitle(getResources().getString(R.string.jammu));
+        ((MainActivity) getActivity()).setActionBarTitle(getResources().getString(R.string.contact));
     }
 
     @Override

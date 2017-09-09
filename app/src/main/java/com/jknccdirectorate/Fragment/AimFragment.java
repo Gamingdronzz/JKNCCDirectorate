@@ -1,4 +1,4 @@
-package com.jknccdirectorate.fragment;
+package com.jknccdirectorate.Fragment;
 
 
 import android.os.Bundle;
@@ -13,10 +13,10 @@ import com.jknccdirectorate.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SongFragment extends Fragment {
+public class AimFragment extends Fragment {
 
 
-    public SongFragment() {
+    public AimFragment() {
         // Required empty public constructor
     }
 
@@ -25,11 +25,11 @@ public class SongFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_song, container, false);
+        return inflater.inflate(R.layout.fragment_aim, container, false);
     }
     public void onResume() {
         super.onResume();
-        ((MainActivity) getActivity()).setActionBarTitle(getResources().getString(R.string.song));
+        ((MainActivity) getActivity()).setActionBarTitle(getResources().getString(R.string.aim));
     }
 
     @Override

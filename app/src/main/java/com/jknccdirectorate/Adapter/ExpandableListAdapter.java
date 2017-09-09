@@ -1,4 +1,4 @@
-package com.jknccdirectorate.adapter;
+package com.jknccdirectorate.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

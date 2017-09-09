@@ -1,5 +1,4 @@
-package com.jknccdirectorate.fragment;
-
+package com.jknccdirectorate.Fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,28 +9,23 @@ import android.view.ViewGroup;
 import com.jknccdirectorate.MainActivity;
 import com.jknccdirectorate.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class CoverageFragment extends Fragment {
-
-
-    public CoverageFragment() {
+public class AdgCornerFragment extends Fragment {
+    public AdgCornerFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_coverage, container, false);
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_adg_corner, container, false);
         return view;
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        ((MainActivity) getActivity()).setActionBarTitle(getResources().getString(R.string.coverage));
+        ((MainActivity) getActivity()).setActionBarTitle(getResources().getString(R.string.adg));
     }
 
     @Override

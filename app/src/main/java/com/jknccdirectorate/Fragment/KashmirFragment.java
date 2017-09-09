@@ -1,4 +1,4 @@
-package com.jknccdirectorate.fragment;
+package com.jknccdirectorate.Fragment;
 
 
 import android.os.Bundle;
@@ -13,10 +13,10 @@ import com.jknccdirectorate.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends Fragment {
+public class KashmirFragment extends Fragment {
 
 
-    public HomeFragment() {
+    public KashmirFragment() {
         // Required empty public constructor
     }
 
@@ -24,14 +24,13 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
-        return view;
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_kashmir, container, false);
     }
 
-    @Override
     public void onResume() {
         super.onResume();
-        ((MainActivity) getActivity()).setActionBarTitle(getResources().getString(R.string.app_name));
+        ((MainActivity) getActivity()).setActionBarTitle(getResources().getString(R.string.kashmir));
     }
 
     @Override

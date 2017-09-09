@@ -1,4 +1,4 @@
-package com.jknccdirectorate.fragment;
+package com.jknccdirectorate.Fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,23 +9,18 @@ import android.view.ViewGroup;
 import com.jknccdirectorate.MainActivity;
 import com.jknccdirectorate.R;
 
-public class AdgCornerFragment extends Fragment {
-    public AdgCornerFragment() {
-        // Required empty public constructor
-    }
-
+public class FeedbackFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_adg_corner, container, false);
-        return view;
+        return inflater.inflate(R.layout.fragment_feedback, container, false);
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        ((MainActivity) getActivity()).setActionBarTitle(getResources().getString(R.string.adg));
+        ((MainActivity) getActivity()).setActionBarTitle(getResources().getString(R.string.feedback));
     }
 
     @Override

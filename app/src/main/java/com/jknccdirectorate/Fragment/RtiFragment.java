@@ -1,4 +1,4 @@
-package com.jknccdirectorate.fragment;
+package com.jknccdirectorate.Fragment;
 
 
 import android.os.Bundle;
@@ -13,10 +13,10 @@ import com.jknccdirectorate.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ContactFragment extends Fragment {
+public class RtiFragment extends Fragment {
 
 
-    public ContactFragment() {
+    public RtiFragment() {
         // Required empty public constructor
     }
 
@@ -25,12 +25,14 @@ public class ContactFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_contact, container, false);
+        View view = inflater.inflate(R.layout.fragment_rti, container, false);
+        return view;
     }
+
     @Override
     public void onResume() {
         super.onResume();
-        ((MainActivity) getActivity()).setActionBarTitle(getResources().getString(R.string.contact));
+        ((MainActivity) getActivity()).setActionBarTitle(getResources().getString(R.string.rti));
     }
 
     @Override
