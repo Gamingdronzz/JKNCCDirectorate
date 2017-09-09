@@ -173,10 +173,24 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        expandableList.setSelectedGroup(0);
-        expandableList.setSelection(0);
-        expandableList.setSelectedChild(0,0,true);
-        Log.d(TAG,"Position = " + expandableList.getSelectedItem());
+        selectHome();
+
+
+    }
+
+    private void selectHome()
+    {
+        long packedPos = expandableList.getPackedPositionForChild(0,0);
+        int flatPos = expandableList.getFlatListPosition(packedPos);
+        int adjustedPos = flatPos - expandableList.getFirstVisiblePosition();
+
+//If all is well, the adjustedPos should never be < 0
+        View childToClick = expandableList.getChildAt(adjustedPos);
+
+//Now adjust the position based on how far the user has scrolled the list.
+        long id = expandableList.getExpandableListAdapter().getChildId(0,0);
+
+        expandableList.performItemClick(childToClick, flatPos, id);
     }
 
 
