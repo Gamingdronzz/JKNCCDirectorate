@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.jknccdirectorate.Adapter.NoticeAdapter;
-import com.jknccdirectorate.MainActivity;
+import com.jknccdirectorate.Activity.MainActivity;
 import com.jknccdirectorate.Model.Notice;
 import com.jknccdirectorate.R;
 

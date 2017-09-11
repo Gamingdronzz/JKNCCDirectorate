@@ -1,7 +1,10 @@
-package com.jknccdirectorate;
+package com.jknccdirectorate.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -13,7 +16,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ExpandableListView;
 
-import com.jknccdirectorate.Model.ExpandedMenuModel;
 import com.jknccdirectorate.Adapter.ExpandableListAdapter;
 import com.jknccdirectorate.Fragment.AdgCornerFragment;
 import com.jknccdirectorate.Fragment.AimFragment;
@@ -23,6 +25,7 @@ import com.jknccdirectorate.Fragment.DisclaimerFragment;
 import com.jknccdirectorate.Fragment.DownloadsFragment;
 import com.jknccdirectorate.Fragment.EventsFragment;
 import com.jknccdirectorate.Fragment.FeedbackFragment;
+import com.jknccdirectorate.Fragment.FragmentLogin;
 import com.jknccdirectorate.Fragment.GalleryFragment;
 import com.jknccdirectorate.Fragment.HomeFragment;
 import com.jknccdirectorate.Fragment.JammuFragment;
@@ -31,6 +34,8 @@ import com.jknccdirectorate.Fragment.PledgeFragment;
 import com.jknccdirectorate.Fragment.RdcFragment;
 import com.jknccdirectorate.Fragment.RtiFragment;
 import com.jknccdirectorate.Fragment.SongFragment;
+import com.jknccdirectorate.Model.ExpandedMenuModel;
+import com.jknccdirectorate.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -43,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
     List<ExpandedMenuModel> listDataHeader;
     HashMap<ExpandedMenuModel, List<String>> listDataChild;
     DrawerLayout drawer;
+    Toolbar toolbar;
+    private FloatingActionButton login, register;
     final String TAG = "Main";
 
 
@@ -50,25 +57,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        findviews();
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
-
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        expandableList = (ExpandableListView) findViewById(R.id.navigationmenu);
-
         prepareListData();
+
         mMenuAdapter = new ExpandableListAdapter(MainActivity.this, listDataHeader, listDataChild, expandableList);
         expandableList.setAdapter(mMenuAdapter);
-        /*if (navigationView != null) {
-            setupDrawerContent(navigationView);
-        }
-*/
+
         expandableList.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
@@ -170,23 +172,45 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment newFragment = new FragmentLogin();
+                newFragment.show(getSupportFragmentManager(), "login");
+            }
+        });
+
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
 
         selectHome();
-
-
     }
 
-    private void selectHome()
-    {
-        long packedPos = expandableList.getPackedPositionForChild(0,0);
+    private void findviews() {
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        expandableList = (ExpandableListView) findViewById(R.id.navigationmenu);
+        login = (FloatingActionButton) findViewById(R.id.btn_login);
+        register = (FloatingActionButton) findViewById(R.id.btn_register);
+    }
+
+    private void selectHome() {
+        long packedPos = expandableList.getPackedPositionForChild(0, 0);
         int flatPos = expandableList.getFlatListPosition(packedPos);
         int adjustedPos = flatPos - expandableList.getFirstVisiblePosition();
 
-//If all is well, the adjustedPos should never be < 0
+        //If all is well, the adjustedPos should never be < 0
         View childToClick = expandableList.getChildAt(adjustedPos);
 
-//Now adjust the position based on how far the user has scrolled the list.
-        long id = expandableList.getExpandableListAdapter().getChildId(0,0);
+        //Now adjust the position based on how far the user has scrolled the list.
+        long id = expandableList.getExpandableListAdapter().getChildId(0, 0);
 
         expandableList.performItemClick(childToClick, flatPos, id);
     }
