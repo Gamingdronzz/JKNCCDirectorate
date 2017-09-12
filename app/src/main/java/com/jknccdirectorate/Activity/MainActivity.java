@@ -176,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 DialogFragment newFragment = new FragmentLogin();
-                newFragment.show(getSupportFragmentManager(), "login");
+                newFragment.show(getSupportFragmentManager(), "LOG_IN");
             }
         });
 
