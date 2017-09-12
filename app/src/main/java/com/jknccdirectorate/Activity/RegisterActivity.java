@@ -2,6 +2,7 @@ package com.jknccdirectorate.Activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.jknccdirectorate.Adapter.ComplexRecyclerViewAdapter;
@@ -21,10 +22,12 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        getSupportActionBar().setTitle("Register");
 
         recyclerView = (RecyclerView) findViewById(R.id.registration_recyclerView);
         adapter = new ComplexRecyclerViewAdapter(getSampleArrayList());
         recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
     }
 
     private ArrayList<Object> getSampleArrayList() {

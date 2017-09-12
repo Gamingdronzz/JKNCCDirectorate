@@ -34,7 +34,7 @@ public class ViewHolderEditText extends RecyclerView.ViewHolder {
     }
 */
     public void setHint(String value) {
-        textview.setHint(value);
+        editText.setHint(value);
     }
 
     public void setTag(String value) {

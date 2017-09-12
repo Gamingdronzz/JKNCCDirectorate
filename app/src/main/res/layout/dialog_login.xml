@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginLeft="@dimen/activity_horizontal_margin"
-    android:layout_marginRight="@dimen/activity_horizontal_margin"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_bg"
     android:orientation="vertical"
-    android:paddingTop="@dimen/activity_vertical_margin">
+    android:layout_margin="@dimen/activity_vertical_margin">
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/usernameWrapper"
         android:layout_width="match_parent"
+        android:paddingLeft="@dimen/padding_large"
+        android:paddingRight="@dimen/padding_large"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/activity_vertical_margin">
 
@@ -25,6 +26,8 @@
         android:id="@+id/passwordWrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/padding_large"
+        android:paddingRight="@dimen/padding_large"
         android:layout_marginTop="@dimen/activity_vertical_margin">
 
         <EditText
@@ -40,6 +43,8 @@
         android:id="@+id/machineWrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/padding_large"
+        android:paddingRight="@dimen/padding_large"
         android:layout_marginTop="@dimen/activity_vertical_margin">
 
         <EditText
@@ -52,21 +57,26 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/padding_large"
+        android:paddingRight="@dimen/padding_large"
+        android:paddingBottom="@dimen/padding_large"
         android:layout_gravity="bottom"
-        android:layout_marginTop="@dimen/activity_vertical_margin">
+        android:layout_marginTop="@dimen/margin_large">
 
         <Button
             android:id="@+id/btn_submit"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
+            android:background="@color/colorAccent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Submit" />
+            android:text="LOGIN" />
 
-        <Button
+       <!-- <Button
             android:id="@+id/btn_cancel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Cancel" />
+            -->
     </LinearLayout>
 </LinearLayout>
