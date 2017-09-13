@@ -86,8 +86,9 @@ public class VolleyHelper {
     }
 
     private class CountRequestsInFlight implements RequestFilter {
-        int count = 0;
+
         Object tag;
+        int count = 0;
 
         public CountRequestsInFlight(Object tag) {
             this.tag = tag;
@@ -98,6 +99,7 @@ public class VolleyHelper {
                 this.count++;
             }
             return false;
+
         }
 
         public int getCount() {

@@ -19,7 +19,9 @@ public class LruBitmapCache extends LruCache<String, Bitmap> implements ImageCac
     }
 
     protected int sizeOf(String key, Bitmap value) {
+
         return (value.getRowBytes() * value.getHeight()) / 1024;
+
     }
 
     public Bitmap getBitmap(String url) {
