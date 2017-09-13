@@ -1,13 +1,47 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
     tools:context="com.jknccdirectorate.Fragment.SongFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!--<TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:text="ENGLISH SONG"
+        android:textAlignment="center" />
+-->
+    <TextView
+        android:id="@+id/englishSong"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:padding="@dimen/activity_vertical_margin"
+        android:scrollbars="vertical"
+        android:text="@string/song_content_english"
+        android:textSize="@dimen/text_15" />
 
-</FrameLayout>
+    <!-- <TextView
+         android:layout_width="match_parent"
+         android:layout_height="0dp"
+         android:layout_weight="1"
+         android:paddingTop="@dimen/activity_vertical_margin"
+         android:text="HINDI SONG"
+         android:textAlignment="center" />
+ -->
+    <TextView
+        android:id="@+id/hindiSong"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:padding="@dimen/activity_vertical_margin"
+        android:scrollbars="vertical"
+        android:text="@string/song_content_hindi"
+        android:textSize="@dimen/text_15" />
+
+
+</LinearLayout>

@@ -52,4 +52,24 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="machine">Machine Number</string>
+
+    <string name="aim_content">To develop qualities of character, courage, comradeship, discipline, leadership, secular outlook,spirit of adventure and sportsmanship and the ideals of selfless service among the youth to make them useful citizens.
+To create a human resource of organised, trained and activated youth, to provide leadership in all walks of life including the Armed Forces and always available for the service of the nation.
+To create suitable environment to motivate the youth to take up a career in the armed forces.</string>
+
+    <string name="song_content_english">Hum Sab Bharatiya Hain, Hum Sab Bharatiya Hain\nApni Manzil Ek Hai,\nHa, Ha, Ha, Ek Hai,\nHo, Ho, Ho, Ek Hai.\nHum Sab Bharatiya Hain.\n\n
+        Kashmir Ki Dharti Rani Hai,\nSartaj Himalaya Hai,\nSaadiyon Se Humne Isko Apne Khoon Se Pala Hai\nDesh Ki Raksha Ki Khatir Hum Shamshir Utha Lenge,\nHum Shamshir Utha Lenge.\n\n
+        Bikhre Bikhre Taare Hain Hum Lekin Jhilmil Ek Hai,\nHa, Ha, Ha, Ek Hai\nHum Sab Bharatiya Hai.\n\n
+        Mandir Gurudwaare Bhi Hain Yahan\nAur Masjid Bhi Hai Yahan\nGirija Ka Hai Ghariyaal Kahin\nMullah ki Kahin Hai Ajaan\n\n
+        Ek Hee Apna Ram Hain, Ek hi Allah Taala Hai,\nEk Hee Allah Taala Hain, Raang Birange Deepak Hain Hum,\nlekin Jagmag Ek Hai,\n\n
+        Ha Ha Ha Ek Hai, Ho Ho Ho Ek Hai.\nHum Sab Bharatiya Hain, Hum Sab Bharatiya Hain.\n
+</string>
+
+    <string name="song_content_hindi">\bहम सब भारतीय हैं, हम सब भारतीय हैं.\nअपनी मंज़िल एक है, हा हा हा एक है, हो हो हो एक है.\nहम सब भारतीय हैं.\n\n
+        कश्मीर की धरती रानी है, सरताज हिमालय है,\nसदियों से हमने इस को अपने खून से पाला है.\nदेश की रक्षा की खातिर हम शमशीर उठा लेंगे,\nहम शमशीर उठा लेंगे.\n\n
+        बिखरे-बिखरे तारे हैं हम, लेकिन झिलमिल एक है,\nहा हा हा एक है, हो हो हो एक है,\nहम सब भारतीय है.\n\n
+        मंदिर, गुरूद्वारे भी हैं यहाँ, और मस्जिद भी है यहाँ,\nिरिजा का है घड़ियाल कहीं मुल्ला की कहीं है अजां\n\n
+        एक ही अपना राम हैं, एक ही अल्लाह ताला है,\nएक ही अल्लाह ताला हैं.\nरंग बिरंगे दीपक हैं हम, लेकिन जगमग एक है,\n\n
+        हा हा हा एक है, हो हो हो एक है.\nहम सब भारतीय हैं, हम सब भारतीय हैं</string>
+
 </resources>
