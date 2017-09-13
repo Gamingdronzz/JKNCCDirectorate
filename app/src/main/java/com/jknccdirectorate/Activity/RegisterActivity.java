@@ -1,9 +1,14 @@
 package com.jknccdirectorate.Activity;
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.widget.ExpandableListView;
 
 import com.jknccdirectorate.Adapter.ComplexRecyclerViewAdapter;
 import com.jknccdirectorate.Model.DropdownModel;
@@ -24,10 +29,15 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         getSupportActionBar().setTitle("Register");
 
-        recyclerView = (RecyclerView) findViewById(R.id.registration_recyclerView);
+        findviews();
         adapter = new ComplexRecyclerViewAdapter(getSampleArrayList());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+    }
+
+    private void findviews() {
+        recyclerView = (RecyclerView) findViewById(R.id.registration_recyclerView);
+
     }
 
     private ArrayList<Object> getSampleArrayList() {
