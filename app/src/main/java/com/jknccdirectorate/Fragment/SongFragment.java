@@ -1,22 +1,25 @@
 package com.jknccdirectorate.Fragment;
 
 
-import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.text.method.ScrollingMovementMethod;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.jknccdirectorate.Activity.MainActivity;
 import com.jknccdirectorate.R;
+import com.jknccdirectorate.Tabs.Pager;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SongFragment extends Fragment {
+public class SongFragment extends Fragment implements TabLayout.OnTabSelectedListener {
+
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
 
 
     public SongFragment() {
@@ -28,13 +31,28 @@ public class SongFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_song, container, false);
-        TextView hindi = (TextView) view.findViewById(R.id.hindiSong);
-        TextView english = (TextView) view.findViewById(R.id.englishSong);
-        Typeface fontHindi = Typeface.createFromAsset(getContext().getAssets(), "MANGAL.TTF");
-        hindi.setTypeface(fontHindi);
-        hindi.setMovementMethod(new ScrollingMovementMethod());
-        english.setMovementMethod(new ScrollingMovementMethod());
+        tabLayout = (TabLayout) view.findViewById(R.id.tabLayout);
+        viewPager = (ViewPager) view.findViewById(R.id.viewPagerLayout);
+        setUpTabLayout();
         return view;
+    }
+
+    private void setUpTabLayout() {
+
+        tabLayout.addOnTabSelectedListener(this);
+        tabLayout.addTab(tabLayout.newTab());
+        tabLayout.addTab(tabLayout.newTab());
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        tabLayout.getTabAt(0).setText("English");
+        tabLayout.getTabAt(1).setText("Hindi");
+
+        Pager adapter = new Pager(getActivity().getSupportFragmentManager(), tabLayout.getTabCount());
+        viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        viewPager.setOffscreenPageLimit(2);
+        viewPager.getAdapter().notifyDataSetChanged();
+
+
     }
 
     public void onResume() {
@@ -46,5 +64,21 @@ public class SongFragment extends Fragment {
     public void onStop() {
         super.onStop();
         ((MainActivity) getActivity()).setActionBarTitle(getResources().getString(R.string.app_name));
+    }
+
+    @Override
+    public void onTabSelected(TabLayout.Tab tab) {
+        int position = tab.getPosition();
+        viewPager.setCurrentItem(position);
+    }
+
+    @Override
+    public void onTabUnselected(TabLayout.Tab tab) {
+
+    }
+
+    @Override
+    public void onTabReselected(TabLayout.Tab tab) {
+
     }
 }
