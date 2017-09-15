@@ -5,7 +5,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
-import com.jknccdirectorate.Tools.LruBitmapCache;
+import com.jknccdirectorate.Tools.BitmapCache;
 
 public class AppController extends Application {
     public static final String TAG = AppController.class.getSimpleName();
@@ -36,7 +36,7 @@ public class AppController extends Application {
     public ImageLoader getImageLoader() {
         getRequestQueue();
         if (this.mImageLoader == null) {
-            this.mImageLoader = new ImageLoader(this.mRequestQueue, new LruBitmapCache());
+            this.mImageLoader = new ImageLoader(this.mRequestQueue, new BitmapCache());
         }
         return this.mImageLoader;
     }

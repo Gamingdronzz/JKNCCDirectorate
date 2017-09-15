@@ -82,6 +82,8 @@ public class GalleryFragment extends Fragment implements VolleyHelper.VolleyResp
 
     //Call this function after on create to get ids from api
     //it is not implemented yet so i have not called it yet
+
+
     private void getImageIDs() {
         String url = this.helper.getBaseURL() + "getGalleryImageIds.php";
         //Map<String, String> params = new HashMap();

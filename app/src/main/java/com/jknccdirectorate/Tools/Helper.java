@@ -1,7 +1,6 @@
 package com.jknccdirectorate.Tools;
 
-import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
@@ -11,7 +10,7 @@ import android.graphics.BitmapFactory;
 import android.util.Base64;
 import android.util.Log;
 
-import com.jknccdirectorate.BuildConfig;
+
 import com.jknccdirectorate.R;
 
 import java.io.ByteArrayOutputStream;
@@ -79,6 +78,7 @@ public class Helper {
         return result.toString();
     }
 
+
     public List<String> getListFromString(String string) {
         String[] intermediate = string.split(",");
         List<String> result = new ArrayList();
@@ -89,12 +89,15 @@ public class Helper {
         return result;
     }
 
+
     public Intent getImageIntent() {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction("android.intent.action.GET_CONTENT");
         return intent;
     }
+
+
 
     public byte[] getByteArrayFromBitmap(Bitmap image) {
         if (image == null) {
@@ -105,11 +108,15 @@ public class Helper {
         return byteArrayOutputStream.toByteArray();
     }
 
+
+
     public Bitmap getBitmapFromString(String value) {
         byte[] inter = Base64.decode(value, 0);
         Log.d("Helper", "Byte Array = " + inter.toString());
         return BitmapFactory.decodeByteArray(inter, 0, inter.length);
     }
+
+
 
     public Bitmap getBitmapFromByteArray(byte[] value) {
         if (value != null) {
@@ -117,6 +124,7 @@ public class Helper {
         }
         return null;
     }
+
 
     public Bitmap getBitmapFromResource(int res) {
         return BitmapFactory.decodeResource(this.context.getResources(), res);

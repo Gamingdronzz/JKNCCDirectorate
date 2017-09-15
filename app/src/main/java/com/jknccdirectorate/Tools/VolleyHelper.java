@@ -21,6 +21,7 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.NetworkImageView;
 import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.jknccdirectorate.App.AppController;
 
 import java.io.UnsupportedEncodingException;
@@ -112,14 +113,14 @@ public class VolleyHelper {
     }
 
     public void makeStringRequest(String url, String TAG) {
-        StringRequest strReq = new StringRequest(1, url, this.stringResponseListener, this.errorListener);
+        StringRequest strReq = new StringRequest(StringRequest.Method.POST, url, this.stringResponseListener, this.errorListener);
         setShouldCache(strReq, true);
         AppController.getInstance().addToRequestQueue(strReq, TAG);
     }
 
     public void makeStringRequest(String url, String TAG, Map<String, String> params) {
         final Map<String, String> map = params;
-        StringRequest strReq = new StringRequest(1, url, this.stringResponseListener, this.errorListener) {
+        StringRequest strReq = new StringRequest(StringRequest.Method.POST, url, this.stringResponseListener, this.errorListener) {
             protected Map<String, String> getParams() throws AuthFailureError {
                 return map;
             }
@@ -214,10 +215,9 @@ public class VolleyHelper {
 
     public int countRequestsInFlight(String tag) {
         RequestQueue queue = AppController.getInstance().getRequestQueue();
-        RequestFilter inFlight = new CountRequestsInFlight(tag);
+        CountRequestsInFlight inFlight = new CountRequestsInFlight(tag);
         queue.cancelAll(inFlight);
-        return 0;
-        //return inFlight.getCount();
+        return inFlight.getCount();
     }
 
     public void removeCachedURL(String url) {
