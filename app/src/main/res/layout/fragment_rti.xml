@@ -4,12 +4,39 @@
     android:layout_height="match_parent"
     tools:context="com.jknccdirectorate.Fragment.RtiFragment">
 
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/activity_vertical_margin"
-        android:text="@string/rti_content"
-        android:textColor="@color/colorBlack"
-        android:textSize="@dimen/text_15" />
+        android:orientation="vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:text="@string/rti_content1"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/text_15" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:padding="@dimen/activity_vertical_margin"
+            android:background="@color/colorPrimaryLight"
+            android:text="@string/rti_content2"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/text_15" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:padding="@dimen/activity_vertical_margin"
+            android:background="@color/colorPrimaryLight"
+            android:text="@string/rti_content3"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/text_15" />
+    </LinearLayout>
 </ScrollView>

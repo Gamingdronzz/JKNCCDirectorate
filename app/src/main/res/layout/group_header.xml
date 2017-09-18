@@ -9,17 +9,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:tint="@color/colorAccent"
         android:layout_centerVertical="true"
-        android:paddingRight="15dp" />
+        android:tint="@color/colorAccent" />
 
     <TextView
         android:id="@+id/heading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin_large"
         android:layout_toLeftOf="@+id/icon_item"
-        android:padding="@dimen/padding_medium"
+        android:paddingBottom="@dimen/padding_medium"
+        android:paddingTop="@dimen/padding_medium"
+        android:paddingLeft="@dimen/padding_medium"
         android:textColor="@color/colorBlack"
         android:textSize="15sp" />
 

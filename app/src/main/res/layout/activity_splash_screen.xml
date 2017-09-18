@@ -40,6 +40,7 @@
         android:layout_alignParentBottom="true"
         android:drawableBottom="@mipmap/gdlogo"
         android:text="Designed and Developed by"
+        android:fontFamily="cursive"
         android:textAlignment="center"
         android:textColor="@color/colorRed" />
 

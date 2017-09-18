@@ -96,16 +96,18 @@ The NCC website besides facilitating online enrolment will provide all informati
 I take this opportunity to appreciate efforts of Brig R Jamwal, Gp Cdr NCC Jammu in conceptualising and finalising the proposal into reality.
 </string>
 
-    <string name="rti_content">NOMINATION OF OFFICERS TO DEAL WITH RTI APPLICATIONS UNDER RTI ACT 2005 OF CENTRAL GOVT AND RTI ACT 2009 OF STATE GOVT OF J&amp;K.
-\n\nThe following Officers are nominated as Appellate Authority, CPIOs, ACPIOs under the Right to Information Act for matters concerning the National Cadet Corps in J&amp;K :-
-\n\nFor Issues Pertaining to Central Govt.
+    <string name="rti_content1">NOMINATION OF OFFICERS TO DEAL WITH RTI APPLICATIONS UNDER RTI ACT 2005 OF CENTRAL GOVT AND RTI ACT 2009 OF STATE GOVT OF J&amp;K.
+\n\<i>The following Officers are nominated as Appellate Authority, CPIOs, ACPIOs under the Right to Information Act for matters concerning the National Cadet Corps in J&amp;K :-</i></string>
+    <string name="rti_content2">For Issues Pertaining to Central Govt.\n
 \n1. Appellate Authority - ADG (A), HQ DG NCC, New Delhi
 \n2. CPIO - DDG NCC Directorate J &amp; K
 \n3. ACPIOs - Group Cdrs Jammu/Srinagar for respective Groups
-\n\nFor Issues Pertaining to State Govt.
+</string>
+    <string name="rti_content3">For Issues Pertaining to State Govt.\n
 \n1. Appellate Authority - Commissioner Cum Secretary,Education Department J &amp; K
 \n2. CPIO - DDG NCC Dte J &amp; K
 \n3. ACPIOs - Group Cdrs Jammu/Srinagar for respective Groups</string>
+
 
     <string name="disclaimer_content">This is the official android application of NCC Directorate, Jammu and Kashmir.
 \nInformation for this app is provided by NCC, Directorate, Jammu and Kashmir.
