@@ -1,5 +1,6 @@
 package com.jknccdirectorate.Activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -11,6 +12,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -18,11 +20,13 @@ import android.widget.ExpandableListView;
 
 import com.jknccdirectorate.Adapter.ExpandableListAdapter;
 import com.jknccdirectorate.Fragment.AdgCornerFragment;
+import com.jknccdirectorate.Fragment.AdminEventsFragment;
 import com.jknccdirectorate.Fragment.AimFragment;
 import com.jknccdirectorate.Fragment.ContactFragment;
 import com.jknccdirectorate.Fragment.CoverageFragment;
 import com.jknccdirectorate.Fragment.DisclaimerFragment;
 import com.jknccdirectorate.Fragment.DownloadsFragment;
+import com.jknccdirectorate.Fragment.EnrollmentFragment;
 import com.jknccdirectorate.Fragment.EventsFragment;
 import com.jknccdirectorate.Fragment.FeedbackFragment;
 import com.jknccdirectorate.Fragment.FragmentLogin;
@@ -32,8 +36,10 @@ import com.jknccdirectorate.Fragment.JammuFragment;
 import com.jknccdirectorate.Fragment.KashmirFragment;
 import com.jknccdirectorate.Fragment.PledgeFragment;
 import com.jknccdirectorate.Fragment.RdcFragment;
+import com.jknccdirectorate.Fragment.ReportsFragment;
 import com.jknccdirectorate.Fragment.RtiFragment;
 import com.jknccdirectorate.Fragment.SongFragment;
+import com.jknccdirectorate.Fragment.VerifyUserFragment;
 import com.jknccdirectorate.Model.ExpandedMenuModel;
 import com.jknccdirectorate.R;
 
@@ -98,6 +104,22 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                             case 1:
                                 fragment = new KashmirFragment();
+                                break;
+                        }
+                        break;
+                    case 13:
+                        switch (i1) {
+                            case 0:
+                                fragment = new EnrollmentFragment();
+                                break;
+                            case 1:
+                                fragment = new AdminEventsFragment();
+                                break;
+                            case 2:
+                                fragment = new VerifyUserFragment();
+                                break;
+                            case 3:
+                                fragment = new ReportsFragment();
                                 break;
                         }
                 }
@@ -237,8 +259,15 @@ public class MainActivity extends AppCompatActivity {
         org.add(getResources().getString(R.string.jammu));
         org.add(getResources().getString(R.string.kashmir));
 
+        List<String> admin = new ArrayList<>();
+        admin.add(getResources().getString(R.string.enrollment));
+        admin.add(getResources().getString(R.string.events_admin));
+        admin.add(getResources().getString(R.string.verify));
+        admin.add(getResources().getString(R.string.reports));
+
         listDataChild.put(listDataHeader.get(2), about);// Header, Child data
         listDataChild.put(listDataHeader.get(3), org);
+        listDataChild.put(listDataHeader.get(13), admin);
 
     }
 
@@ -248,7 +277,24 @@ public class MainActivity extends AppCompatActivity {
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+            alertDialogBuilder
+                    .setMessage("Are you sure you want to Exit?")
+                    .setCancelable(true)
+                    .setPositiveButton("YES",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    finish();
+                                }
+                            })
+                    .setNegativeButton("NO",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.dismiss();
+                                }
+                            });
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
         }
     }
 
