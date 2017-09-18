@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
         android:orientation="vertical">
 
         <ImageView
@@ -23,13 +23,34 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
+            android:layout_marginTop="@dimen/margin_small"
             android:gravity="center_horizontal"
+            android:textStyle="bold"
             android:text="@string/org_name"
-            android:textColor="@color/colorBlack"
+            android:textColor="@color/colorDarkBlue"
             android:textSize="@dimen/text_25" />
 
+
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/designedBy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:drawableBottom="@mipmap/gdlogo"
+        android:text="Designed and Developed by"
+        android:textAlignment="center"
+        android:textColor="@color/colorRed" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/designedBy"
+        android:layout_marginBottom="@dimen/margin_xlarge"
+        android:text="A concept by – Brig. Rajan Jamwal"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/text_15" />
 
 </RelativeLayout>
