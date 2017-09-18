@@ -5,8 +5,13 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
     <string name="action_settings">Settings</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Notices">Notices</string>
+    <string name="important_links">Important Links</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="machine">Machine Number</string>
 
     <string name="aim">Aim</string>
     <string name="song">Song</string>
@@ -49,14 +54,6 @@
         <item>@string/admin</item>
     </array>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="Notices">Notices</string>
-    <string name="important_links">Important Links</string>
-
-    <string name="username">Username</string>
-    <string name="password">Password</string>
-    <string name="machine">Machine Number</string>
 
     <string name="aim_content">To develop qualities of character, courage, comradeship, discipline, leadership, secular outlook,spirit of adventure and sportsmanship and the ideals of selfless service among the youth to make them useful citizens.
 To create a human resource of organised, trained and activated youth, to provide leadership in all walks of life including the Armed Forces and always available for the service of the nation.
@@ -86,16 +83,33 @@ To create suitable environment to motivate the youth to take up a career in the 
         Ha Ha Ha Ek Hai, Ho Ho Ho Ek Hai.\nHum Sab Bharatiya Hain, Hum Sab Bharatiya Hain.\n
 </string>
 
-    <string name="song_content_hindi">हम सब भारतीय हैं, हम सब भारतीय हैं|\nअपनी मंज़िल एक है, हा हा हा एक है, हो हो हो एक है|\nहम सब भारतीय हैं|\n\n
-        कश्मीर की धरती रानी है, सरताज हिमालय है,\nसदियों से हमने इस को अपने खून से पाला है|\nदेश की रक्षा की खातिर हम शमशीर उठा लेंगे,\nहम शमशीर उठा लेंगे|\n\n
-        बिखरे-बिखरे तारे हैं हम, लेकिन झिलमिल एक है,\nहा हा हा एक है, हो हो हो एक है,\nहम सब भारतीय है|\n\n
-        मंदिर, गुरूद्वारे भी हैं यहाँ, और मस्जिद भी है यहाँ,\nिरिजा का है घड़ियाल कहीं मुल्ला की कहीं है अजां\n\n
-        एक ही अपना राम हैं, एक ही अल्लाह ताला है,\nएक ही अल्लाह ताला हैं|\nरंग बिरंगे दीपक हैं हम, लेकिन जगमग एक है,\n\n
-        हा हा हा एक है, हो हो हो एक है|\nहम सब भारतीय हैं, हम सब भारतीय हैं</string>
+    <string name="song_content_hindi">हम सब भारतीय हैं, हम सब भारतीय हैं|\nअपनी मंज़िल एक है, हा हा हा एक है, हो हो हो एक है|\nहम सब भारतीय हैं|
+\n\nकश्मीर की धरती रानी है, सरताज हिमालय है,\nसदियों से हमने इस को अपने खून से पाला है|\nदेश की रक्षा की खातिर हम शमशीर उठा लेंगे,\nहम शमशीर उठा लेंगे|
+\n\nबिखरे-बिखरे तारे हैं हम, लेकिन झिलमिल एक है,\nहा हा हा एक है, हो हो हो एक है,\nहम सब भारतीय है|
+\n\nमंदिर, गुरूद्वारे भी हैं यहाँ, और मस्जिद भी है यहाँ,\nिरिजा का है घड़ियाल कहीं मुल्ला की कहीं है अजां|
+\n\nएक ही अपना राम हैं, एक ही अल्लाह ताला है,\nएक ही अल्लाह ताला हैं|\nरंग बिरंगे दीपक हैं हम, लेकिन जगमग एक है,
+\n\nहा हा हा एक है, हो हो हो एक है|\nहम सब भारतीय हैं, हम सब भारतीय हैं</string>
 
     <string name="adg_content">Today is a landmark day in the history of NCC Dte J&amp;K, wherein with the launch of NCC Dte J&amp;K Website the process of automation of enrolment commences.\n
-	National Cadet Corps is committed to converting youth of our State into responsible citizens. NCC also fosters national integration and communal harmony.\n
-	The NCC website besides facilitating online enrolment will provide all information regarding NCC training activities viz Camps, Adventure Training, A, B, C Certificate exam schedule, mountaineering, sailing and cycling schedule etc, besides giving out opportunities the NCC offers for career progression with touch of the screen / click.\n
-	I take this opportunity to appreciate efforts of Brig R Jamwal, Gp Cdr NCC Jammu in conceptualising and finalising the proposal into reality.
+National Cadet Corps is committed to converting youth of our State into responsible citizens. NCC also fosters national integration and communal harmony.\n
+The NCC website besides facilitating online enrolment will provide all information regarding NCC training activities viz Camps, Adventure Training, A, B, C Certificate exam schedule, mountaineering, sailing and cycling schedule etc, besides giving out opportunities the NCC offers for career progression with touch of the screen / click.\n
+I take this opportunity to appreciate efforts of Brig R Jamwal, Gp Cdr NCC Jammu in conceptualising and finalising the proposal into reality.
 </string>
+
+    <string name="rti_content">NOMINATION OF OFFICERS TO DEAL WITH RTI APPLICATIONS UNDER RTI ACT 2005 OF CENTRAL GOVT AND RTI ACT 2009 OF STATE GOVT OF J&amp;K.
+\n\nThe following Officers are nominated as Appellate Authority, CPIOs, ACPIOs under the Right to Information Act for matters concerning the National Cadet Corps in J&amp;K :-
+\n\nFor Issues Pertaining to Central Govt.
+\n1. Appellate Authority - ADG (A), HQ DG NCC, New Delhi
+\n2. CPIO - DDG NCC Directorate J &amp; K
+\n3. ACPIOs - Group Cdrs Jammu/Srinagar for respective Groups
+\n\nFor Issues Pertaining to State Govt.
+\n1. Appellate Authority - Commissioner Cum Secretary,Education Department J &amp; K
+\n2. CPIO - DDG NCC Dte J &amp; K
+\n3. ACPIOs - Group Cdrs Jammu/Srinagar for respective Groups</string>
+
+    <string name="disclaimer_content">This is the official android application of NCC Directorate, Jammu and Kashmir.
+\nInformation for this app is provided by NCC, Directorate, Jammu and Kashmir.
+\nWhile every care has been taken to provide correct and updated information, the NCC Directorate (J &amp; K) or Gaming Dronzz is not responsible for any error/ omission or delay in updating data/information and so on.
+\nThe visitors to the site are therefore, requested to contact the NCC Directorate (J &amp; K).
+\n\nApplication is developed and maintained by GAMING DRONZZ, Jammu. </string>
 </resources>
