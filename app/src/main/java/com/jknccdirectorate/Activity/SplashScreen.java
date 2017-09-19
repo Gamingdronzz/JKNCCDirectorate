@@ -27,7 +27,7 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
         StartAnimations();
-        nextActivity();
+        //nextActivity();
     }
 
     private void StartAnimations() {
@@ -37,15 +37,34 @@ public class SplashScreen extends AppCompatActivity {
         l.clearAnimation();
         l.startAnimation(anim);
 
-        anim = AnimationUtils.loadAnimation(this, R.anim.translate);
-        anim.reset();
+        Animation animationTranslate = AnimationUtils.loadAnimation(this, R.anim.translate);
+        animationTranslate.reset();
         ImageView iv = (ImageView) findViewById(R.id.logo);
         iv.clearAnimation();
-        iv.startAnimation(anim);
+        iv.startAnimation(animationTranslate);
+
+        animationTranslate.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                nextActivity();
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
     }
     private void nextActivity() {
         intent = new Intent(SplashScreen.this, MainActivity.class);
-        Thread thread = new Thread() {
+        startActivity(intent);
+        finish();
+        /*Thread thread = new Thread() {
             public void run() {
                 super.run();
                 try {
@@ -53,17 +72,17 @@ public class SplashScreen extends AppCompatActivity {
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 } finally {
-                    startActivity(intent);
+
                 }
             }
         };
         thread.start();
+        */
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        finish();
     }
 }
 
