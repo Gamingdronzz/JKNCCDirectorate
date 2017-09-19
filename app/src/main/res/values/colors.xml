@@ -12,6 +12,8 @@
     <color name="colorOffWhite">#dddddd</color>
     <color name="colorPrimaryText">#212121</color>
     <color name="colorRed">#ff0000</color>
+    <color name="colorTextBack">#E1BEE7</color>
+    <color name="colorHeadingBack">#CE93D8</color>
     <color name="colorDarkBlue">#000080</color>
     <color name="colorSecondaryText">#757575</color>
     <color name="colorWhite">#ffffff</color>

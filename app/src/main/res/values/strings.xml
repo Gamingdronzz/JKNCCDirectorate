@@ -55,32 +55,17 @@
     </array>
 
 
-    <string name="aim_content">To develop qualities of character, courage, comradeship, discipline, leadership, secular outlook,spirit of adventure and sportsmanship and the ideals of selfless service among the youth to make them useful citizens.
-To create a human resource of organised, trained and activated youth, to provide leadership in all walks of life including the Armed Forces and always available for the service of the nation.
-To create suitable environment to motivate the youth to take up a career in the armed forces.</string>
+    <string name="aim_content"><li>To develop qualities of character, courage, comradeship, discipline, leadership, secular outlook,spirit of adventure and sportsmanship and the ideals of selfless service among the youth to make them useful citizens.</li>
+\n\n<li>To create a human resource of organised, trained and activated youth, to provide leadership in all walks of life including the Armed Forces and always available for the service of the nation.</li>
+\n\n<li>To create suitable environment to motivate the youth to take up a career in the armed forces.</li></string>
 
     <string name="song_content_english">Hum Sab Bharatiya Hain, Hum Sab Bharatiya Hain
-        \nApni Manzil Ek Hai,
-        \nHa, Ha, Ha, Ek Hai,
-        \nHo, Ho, Ho, Ek Hai.
-        \nHum Sab Bharatiya Hain.
-        \n\n
-        Kashmir Ki Dharti Rani Hai,
-        \nSartaj Himalaya Hai,
-        \nSaadiyon Se Humne Isko Apne Khoon Se Pala Hai
-        \nDesh Ki Raksha Ki Khatir Hum Shamshir Utha Lenge,
-        \nHum Shamshir Utha Lenge.
-        \n\n
-        Bikhre Bikhre Taare Hain Hum Lekin Jhilmil Ek Hai,
-        \nHa, Ha, Ha, Ek Hai
-        \nHum Sab Bharatiya Hai.
-        \n\n
-        Mandir Gurudwaare Bhi Hain Yahan
-        \nAur Masjid Bhi Hai Yahan
-        \nGirija Ka Hai Ghariyaal Kahin
-        \nMullah ki Kahin Hai Ajaan\n\n
-        Ek Hee Apna Ram Hain, Ek hi Allah Taala Hai,\nEk Hee Allah Taala Hain, Raang Birange Deepak Hain Hum,\nlekin Jagmag Ek Hai,\n\n
-        Ha Ha Ha Ek Hai, Ho Ho Ho Ek Hai.\nHum Sab Bharatiya Hain, Hum Sab Bharatiya Hain.\n
+\nApni Manzil Ek Hai,\nHa, Ha, Ha, Ek Hai,\nHo, Ho, Ho, Ek Hai.\nHum Sab Bharatiya Hain.
+\n\nKashmir Ki Dharti Rani Hai,\nSartaj Himalaya Hai,\nSaadiyon Se Humne Isko Apne Khoon Se Pala Hai\nDesh Ki Raksha Ki Khatir Hum Shamshir Utha Lenge,\nHum Shamshir Utha Lenge.
+\n\nBikhre Bikhre Taare Hain Hum Lekin Jhilmil Ek Hai,\nHa, Ha, Ha, Ek Hai\nHum Sab Bharatiya Hai.
+\n\nMandir Gurudwaare Bhi Hain Yahan\nAur Masjid Bhi Hai Yahan\nGirija Ka Hai Ghariyaal Kahin\nMullah ki Kahin Hai Ajaan.
+\n\nEk Hee Apna Ram Hain, Ek hi Allah Taala Hai,\nEk Hee Allah Taala Hain, Raang Birange Deepak Hain Hum,\nlekin Jagmag Ek Hai,
+\n\nHa Ha Ha Ek Hai, Ho Ho Ho Ek Hai.\nHum Sab Bharatiya Hain, Hum Sab Bharatiya Hain.\n
 </string>
 
     <string name="song_content_hindi">हम सब भारतीय हैं, हम सब भारतीय हैं|\nअपनी मंज़िल एक है, हा हा हा एक है, हो हो हो एक है|\nहम सब भारतीय हैं|
@@ -91,27 +76,26 @@ To create suitable environment to motivate the youth to take up a career in the 
 \n\nहा हा हा एक है, हो हो हो एक है|\nहम सब भारतीय हैं, हम सब भारतीय हैं</string>
 
     <string name="adg_content">Today is a landmark day in the history of NCC Dte J&amp;K, wherein with the launch of NCC Dte J&amp;K Website the process of automation of enrolment commences.\n
-National Cadet Corps is committed to converting youth of our State into responsible citizens. NCC also fosters national integration and communal harmony.\n
-The NCC website besides facilitating online enrolment will provide all information regarding NCC training activities viz Camps, Adventure Training, A, B, C Certificate exam schedule, mountaineering, sailing and cycling schedule etc, besides giving out opportunities the NCC offers for career progression with touch of the screen / click.\n
-I take this opportunity to appreciate efforts of Brig R Jamwal, Gp Cdr NCC Jammu in conceptualising and finalising the proposal into reality.
+    National Cadet Corps is committed to converting youth of our State into responsible citizens. NCC also fosters national integration and communal harmony.\n
+    The NCC website besides facilitating online enrolment will provide all information regarding NCC training activities viz Camps, Adventure Training, A, B, C Certificate exam schedule, mountaineering, sailing and cycling schedule etc, besides giving out opportunities the NCC offers for career progression with touch of the screen / click.\n
+    I take this opportunity to appreciate efforts of Brig R Jamwal, Gp Cdr NCC Jammu in conceptualising and finalising the proposal into reality.
 </string>
 
     <string name="rti_content1">NOMINATION OF OFFICERS TO DEAL WITH RTI APPLICATIONS UNDER RTI ACT 2005 OF CENTRAL GOVT AND RTI ACT 2009 OF STATE GOVT OF J&amp;K.
-\n\<i>The following Officers are nominated as Appellate Authority, CPIOs, ACPIOs under the Right to Information Act for matters concerning the National Cadet Corps in J&amp;K :-</i></string>
-    <string name="rti_content2">For Issues Pertaining to Central Govt.\n
-\n1. Appellate Authority - ADG (A), HQ DG NCC, New Delhi
-\n2. CPIO - DDG NCC Directorate J &amp; K
-\n3. ACPIOs - Group Cdrs Jammu/Srinagar for respective Groups
-</string>
-    <string name="rti_content3">For Issues Pertaining to State Govt.\n
-\n1. Appellate Authority - Commissioner Cum Secretary,Education Department J &amp; K
-\n2. CPIO - DDG NCC Dte J &amp; K
-\n3. ACPIOs - Group Cdrs Jammu/Srinagar for respective Groups</string>
+\n\n<i>The following Officers are nominated as Appellate Authority, CPIOs, ACPIOs under the Right to Information Act for matters concerning the National Cadet Corps in J&amp;K :-</i></string>
+
+    <string name="rti_content2"><li>Appellate Authority - ADG (A), HQ DG NCC, New Delhi</li>
+\n<li>CPIO - DDG NCC Directorate J&amp;K</li>
+\n<li>ACPIOs - Group Cdrs Jammu/Srinagar for respective Groups</li></string>
+
+    <string name="rti_content3"><li>Appellate Authority - Commissioner Cum Secretary,Education Department J&amp;K</li>
+\n<li>CPIO - DDG NCC Dte J&amp;K</li>
+\n<li>ACPIOs - Group Cdrs Jammu/Srinagar for respective Groups</li></string>
 
 
     <string name="disclaimer_content">This is the official android application of NCC Directorate, Jammu and Kashmir.
 \nInformation for this app is provided by NCC, Directorate, Jammu and Kashmir.
-\nWhile every care has been taken to provide correct and updated information, the NCC Directorate (J &amp; K) or Gaming Dronzz is not responsible for any error/ omission or delay in updating data/information and so on.
-\nThe visitors to the site are therefore, requested to contact the NCC Directorate (J &amp; K).
+\nWhile every care has been taken to provide correct and updated information, the NCC Directorate (J&amp;K) or Gaming Dronzz is not responsible for any error/ omission or delay in updating data/information and so on.
+\nThe visitors to the site are therefore, requested to contact the NCC Directorate (J&amp;K).
 \n\nApplication is developed and maintained by GAMING DRONZZ, Jammu. </string>
 </resources>

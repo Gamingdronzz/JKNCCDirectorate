@@ -3,12 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <com.uncopt.android.widget.text.justify.JustifiedTextView
         android:id="@+id/hindiSong"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="@dimen/activity_vertical_margin"
         android:text="@string/song_content_hindi"
+        android:textColor="@color/colorBlack"
         android:textSize="@dimen/text_20" />
 
 

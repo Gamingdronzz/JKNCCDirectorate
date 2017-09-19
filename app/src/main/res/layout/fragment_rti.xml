@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back"
     tools:context="com.jknccdirectorate.Fragment.RtiFragment">
 
 
@@ -10,7 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
+        <com.uncopt.android.widget.text.justify.JustifiedTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/activity_vertical_margin"
@@ -19,24 +20,63 @@
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/text_15" />
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/activity_vertical_margin"
-            android:padding="@dimen/activity_vertical_margin"
-            android:background="@color/colorPrimaryLight"
-            android:text="@string/rti_content2"
-            android:textColor="@color/colorBlack"
-            android:textSize="@dimen/text_15" />
+            android:orientation="vertical">
 
-        <TextView
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorHeadingBack"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/margin_medium"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:text="For Issues Pertaining to Central Govt."
+                android:textAllCaps="true"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_15"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTextBack"
+                android:padding="@dimen/activity_vertical_margin"
+                android:text="@string/rti_content2"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_15" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/activity_vertical_margin"
-            android:padding="@dimen/activity_vertical_margin"
-            android:background="@color/colorPrimaryLight"
-            android:text="@string/rti_content3"
-            android:textColor="@color/colorBlack"
-            android:textSize="@dimen/text_15" />
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorHeadingBack"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/margin_medium"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:text="For Issues Pertaining to State Govt."
+                android:textAllCaps="true"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_15"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTextBack"
+                android:padding="@dimen/activity_vertical_margin"
+                android:text="@string/rti_content3"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_15" />
+        </LinearLayout>
+
     </LinearLayout>
 </ScrollView>
