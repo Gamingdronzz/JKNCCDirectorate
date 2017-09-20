@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
         android:orientation="vertical">
 
         <ImageView
@@ -18,17 +18,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:src="@mipmap/logo" />
+            android:padding="@dimen/padding_small"
+            android:src="@drawable/logo" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_small"
             android:gravity="center_horizontal"
-            android:textStyle="bold"
             android:text="@string/org_name"
             android:textColor="@color/colorDarkBlue"
-            android:textSize="@dimen/text_25" />
+            android:textSize="@dimen/text_20"
+            android:textStyle="bold" />
 
 
     </LinearLayout>
@@ -39,8 +39,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:drawableBottom="@mipmap/gdlogo"
-        android:text="Designed and Developed by"
         android:fontFamily="cursive"
+        android:text="Designed and Developed by"
         android:textAlignment="center"
         android:textColor="@color/colorRed" />
 

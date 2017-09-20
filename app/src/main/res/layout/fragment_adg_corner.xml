@@ -2,7 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="@dimen/activity_vertical_margin"
     android:background="@drawable/back"
     tools:context="com.jknccdirectorate.Fragment.AdgCornerFragment">
 
@@ -21,26 +20,26 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:padding="@dimen/padding_medium"
                 android:gravity="center_horizontal|center_vertical"
+                android:padding="@dimen/padding_medium"
                 android:text="MESSAGE OF MAJ GEN NILENDRA KUMAR, ADG NCC J&amp;K"
                 android:textAlignment="center"
                 android:textColor="@color/colorBlack"
-                android:textSize="@dimen/text_15"
+                android:textSize="@dimen/text_20"
                 android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:padding="@dimen/padding_medium"
                 android:src="@drawable/adg" />
         </LinearLayout>
 
         <com.uncopt.android.widget.text.justify.JustifiedTextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/margin_large"
-            android:padding="@dimen/padding_medium"
+            android:padding="@dimen/padding_large"
             android:text="@string/adg_content"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/text_15" />

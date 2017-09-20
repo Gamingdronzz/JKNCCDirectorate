@@ -33,14 +33,14 @@
             android:id="@+id/btn_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/register" />
+            app:srcCompat="@drawable/register" />
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/btn_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_large"
-            app:srcCompat="@mipmap/login" />
+            app:srcCompat="@drawable/login" />
 
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

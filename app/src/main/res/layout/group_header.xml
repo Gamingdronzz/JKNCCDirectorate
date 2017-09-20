@@ -18,10 +18,11 @@
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@+id/icon_item"
         android:paddingBottom="@dimen/padding_medium"
+        android:paddingLeft="@dimen/padding_large"
         android:paddingTop="@dimen/padding_medium"
-        android:paddingLeft="@dimen/padding_medium"
-        android:textColor="@color/colorBlack"
-        android:textSize="15sp" />
+        android:textColor="@color/colorLightBlack"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="@dimen/text_20" />
 
 
 </RelativeLayout>

@@ -25,8 +25,11 @@
             android:id="@+id/navigationmenu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="160dp"
+            android:layout_marginTop="@dimen/nav_header_height"
             android:background="@android:color/white"
+            android:childDivider="@color/colorAccent"
+            android:divider="@color/colorAccent"
+            android:dividerHeight="0.5dp"
             android:groupIndicator="@null" />
 
     </android.support.design.widget.NavigationView>

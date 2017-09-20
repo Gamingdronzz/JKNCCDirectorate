@@ -2,17 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/back"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/submenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/padding_medium"
+        android:layout_marginLeft="@dimen/margin_xlarge"
+        android:fontFamily="sans-serif-condensed"
         android:paddingBottom="@dimen/padding_medium"
         android:paddingLeft="@dimen/padding_large"
-        android:layout_marginLeft="@dimen/margin_xlarge"
-        android:textColor="@color/colorGray"
-        android:textSize="15sp" />
+        android:paddingTop="@dimen/padding_medium"
+        android:textColor="@color/colorLightBlack"
+        android:textSize="@dimen/text_20" />
 
 </LinearLayout>
