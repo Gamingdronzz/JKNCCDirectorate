@@ -6,9 +6,6 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.DialogFragment;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -16,30 +13,11 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.ExpandableListView;
 
 import com.jknccdirectorate.Adapter.ExpandableListAdapter;
-import com.jknccdirectorate.Fragment.AdgCornerFragment;
-import com.jknccdirectorate.Fragment.AdminEventsFragment;
-import com.jknccdirectorate.Fragment.AimFragment;
-import com.jknccdirectorate.Fragment.ContactFragment;
-import com.jknccdirectorate.Fragment.CoverageFragment;
-import com.jknccdirectorate.Fragment.DisclaimerFragment;
-import com.jknccdirectorate.Fragment.DownloadsFragment;
-import com.jknccdirectorate.Fragment.EnrollmentFragment;
-import com.jknccdirectorate.Fragment.EventsFragment;
-import com.jknccdirectorate.Fragment.FeedbackFragment;
 import com.jknccdirectorate.Fragment.FragmentLogin;
-import com.jknccdirectorate.Fragment.GalleryFragment;
-import com.jknccdirectorate.Fragment.HomeFragment;
-import com.jknccdirectorate.Fragment.JammuFragment;
-import com.jknccdirectorate.Fragment.KashmirFragment;
-import com.jknccdirectorate.Fragment.PledgeFragment;
-import com.jknccdirectorate.Fragment.RdcFragment;
-import com.jknccdirectorate.Fragment.ReportsFragment;
-import com.jknccdirectorate.Fragment.RtiFragment;
-import com.jknccdirectorate.Fragment.SongFragment;
-import com.jknccdirectorate.Fragment.VerifyUserFragment;
 import com.jknccdirectorate.Model.ExpandedMenuModel;
 import com.jknccdirectorate.R;
 
@@ -51,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     ExpandableListAdapter mMenuAdapter;
     ExpandableListView expandableList;
+    WebView webView;
     List<ExpandedMenuModel> listDataHeader;
     HashMap<ExpandedMenuModel, List<String>> listDataChild;
     DrawerLayout drawer;
@@ -65,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         findviews();
+        webView.getSettings().setJavaScriptEnabled(true);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -80,53 +60,57 @@ public class MainActivity extends AppCompatActivity {
         expandableList.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
-                Fragment fragment = new Fragment();
-                FragmentManager fm = getSupportFragmentManager();
-                FragmentTransaction ft;
+
                 switch (i) {
                     case 2:
                         switch (i1) {
                             case 0:
-                                fragment = new AimFragment();
+                                //fragment = new AimFragment();
+                                webView.loadUrl("http://jknccdirectorate.com/aim.php");
                                 break;
                             case 1:
-                                fragment = new SongFragment();
+                                //fragment = new SongFragment();
+                                webView.loadUrl("http://jknccdirectorate.com/song.php");
                                 break;
                             case 2:
-                                fragment = new PledgeFragment();
+                                //fragment = new PledgeFragment();
+                                webView.loadUrl("jknccdirectorate.com/pledge.php");
                                 break;
                         }
                         break;
                     case 3:
                         switch (i1) {
                             case 0:
-                                fragment = new JammuFragment();
+                                //fragment = new JammuFragment();
+                                webView.loadUrl("http://jknccdirectorate.com/org-jammu.php");
                                 break;
                             case 1:
-                                fragment = new KashmirFragment();
+                                //fragment = new KashmirFragment();
+                                webView.loadUrl("http://jknccdirectorate.com/org-srinagar.php");
                                 break;
                         }
                         break;
-                    case 13:
+                   /* case 13:
                         switch (i1) {
                             case 0:
-                                fragment = new EnrollmentFragment();
+                                //fragment = new EnrollmentFragment();
+                                webView.loadUrl("http://jknccdirectorate.com/aim.php");
                                 break;
                             case 1:
-                                fragment = new AdminEventsFragment();
+                                //fragment = new AdminEventsFragment();
+                                webView.loadUrl("http://jknccdirectorate.com/aim.php");
                                 break;
                             case 2:
-                                fragment = new VerifyUserFragment();
+                                //fragment = new VerifyUserFragment();
+                                webView.loadUrl("http://jknccdirectorate.com/aim.php");
                                 break;
                             case 3:
-                                fragment = new ReportsFragment();
+                                //fragment = new ReportsFragment();
+                                webView.loadUrl("http://jknccdirectorate.com/aim.php");
                                 break;
-                        }
+                        }*/
                 }
                 drawer.closeDrawer(GravityCompat.START);
-                ft = fm.beginTransaction();
-                ft.replace(R.id.content_frame, fragment);
-                ft.commit();
                 return false;
             }
         });
@@ -134,62 +118,68 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onGroupClick(ExpandableListView expandableListView, View view, int i, long l) {
 
-                Fragment fragment = new Fragment();
-                FragmentManager fm = getSupportFragmentManager();
-                FragmentTransaction ft;
-                ft = fm.beginTransaction();
                 switch (i) {
                     case 0:
-                        fragment = new HomeFragment();
+                        //fragment = new HomeFragment();
+                        webView.loadUrl("http://jknccdirectorate.com/index.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
 
                     case 1:
-                        fragment = new AdgCornerFragment();
+                        //fragment = new AdgCornerFragment();
+                        webView.loadUrl("http://jknccdirectorate.com/adg-corner.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
                     case 4:
-                        fragment = new CoverageFragment();
+                        //fragment = new CoverageFragment();
+                        webView.loadUrl("http://jknccdirectorate.com/coverage.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
                     case 5:
-                        fragment = new GalleryFragment();
+                        //fragment = new GalleryFragment();
+                        webView.loadUrl("http://jknccdirectorate.com/gallery.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
                     case 6:
-                        fragment = new RdcFragment();
+                        //fragment = new RdcFragment();
+                        webView.loadUrl("http://jknccdirectorate.com/rdc2017.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
                     case 7:
-                        fragment = new RtiFragment();
+                        //fragment = new RtiFragment();
+                        webView.loadUrl("http://jknccdirectorate.com/rti.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
                     case 8:
-                        fragment = new DownloadsFragment();
+                        //fragment = new DownloadsFragment();
+                        webView.loadUrl("http://jknccdirectorate.com/download.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
                     case 9:
-                        fragment = new ContactFragment();
+                        //fragment = new ContactFragment();
+                        webView.loadUrl("http://jknccdirectorate.com/contact-us.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
                     case 10:
-                        fragment = new DisclaimerFragment();
+                        //fragment = new DisclaimerFragment();
+                        webView.loadUrl("http://jknccdirectorate.com/disclaimer.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
-                    case 11:
-                        fragment = new FeedbackFragment();
+                   /* case 11:
+                        //fragment = new FeedbackFragment();
+                        webView.loadUrl("http://jknccdirectorate.com/aim.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
-                    case 12:
-                        fragment = new EventsFragment();
+                   */ case 12:
+                        //fragment = new EventsFragment();
+                        webView.loadUrl("http://jknccdirectorate.com/event.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
 
                 }
 
-                ft.replace(R.id.content_frame, fragment);
-                ft.commit();
-
+                //ft.replace(R.id.content_frame, fragment);
+                //ft.commit();
                 return false;
             }
         });
@@ -221,6 +211,7 @@ public class MainActivity extends AppCompatActivity {
         expandableList = (ExpandableListView) findViewById(R.id.navigationmenu);
         login = (FloatingActionButton) findViewById(R.id.btn_login);
         register = (FloatingActionButton) findViewById(R.id.btn_register);
+        webView = (WebView) findViewById(R.id.webView);
     }
 
     private void selectHome() {
