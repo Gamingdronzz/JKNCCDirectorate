@@ -9,11 +9,17 @@
     tools:context="com.jknccdirectorate.Activity.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-       <WebView
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <WebView
             android:id="@+id/webView"
-           android:layout_marginTop="@dimen/margin_large"
+            android:background="@color/colorOffWhite"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></WebView>
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_large"></WebView>
 
-
+    </FrameLayout>
 </LinearLayout>

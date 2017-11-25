@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back"
+    android:background="@color/colorOffWhite"
     tools:context="com.jknccdirectorate.Fragment.RtiFragment">
 
 
@@ -29,7 +29,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorHeadingBack"
+                android:background="@color/colorGray"
                 android:paddingBottom="@dimen/activity_vertical_margin"
                 android:paddingLeft="@dimen/margin_medium"
                 android:paddingTop="@dimen/activity_vertical_margin"
@@ -42,7 +42,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorTextBack"
+                android:background="@color/colorLightGray"
                 android:padding="@dimen/activity_vertical_margin"
                 android:text="@string/rti_content2"
                 android:textColor="@color/colorBlack"
@@ -58,7 +58,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorHeadingBack"
+                android:background="@color/colorGray"
                 android:paddingBottom="@dimen/activity_vertical_margin"
                 android:paddingLeft="@dimen/margin_medium"
                 android:paddingTop="@dimen/activity_vertical_margin"
@@ -71,7 +71,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorTextBack"
+                android:background="@color/colorLightGray"
                 android:padding="@dimen/activity_vertical_margin"
                 android:text="@string/rti_content3"
                 android:textColor="@color/colorBlack"

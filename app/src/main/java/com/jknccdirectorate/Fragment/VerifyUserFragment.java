@@ -30,7 +30,7 @@ public class VerifyUserFragment extends Fragment {
 
     public void onResume() {
         super.onResume();
-        ((MainActivity) getActivity()).setActionBarTitle(getResources().getString(R.string.verify));
+       // ((MainActivity) getActivity()).setActionBarTitle(getResources().getString(R.string.verify));
     }
 
     @Override

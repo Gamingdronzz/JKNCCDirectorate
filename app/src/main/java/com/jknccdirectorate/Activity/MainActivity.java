@@ -1,14 +1,13 @@
 package com.jknccdirectorate.Activity;
 
-import android.annotation.TargetApi;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.DialogFragment;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -26,7 +25,18 @@ import android.widget.ExpandableListView;
 import android.widget.Toast;
 
 import com.jknccdirectorate.Adapter.ExpandableListAdapter;
-import com.jknccdirectorate.Fragment.FragmentLogin;
+import com.jknccdirectorate.Fragment.AdgCornerFragment;
+import com.jknccdirectorate.Fragment.AimFragment;
+import com.jknccdirectorate.Fragment.ContactFragment;
+import com.jknccdirectorate.Fragment.CoverageFragment;
+import com.jknccdirectorate.Fragment.DisclaimerFragment;
+import com.jknccdirectorate.Fragment.DownloadsFragment;
+import com.jknccdirectorate.Fragment.JammuFragment;
+import com.jknccdirectorate.Fragment.KashmirFragment;
+import com.jknccdirectorate.Fragment.PledgeFragment;
+import com.jknccdirectorate.Fragment.RdcFragment;
+import com.jknccdirectorate.Fragment.RtiFragment;
+import com.jknccdirectorate.Fragment.SongFragment;
 import com.jknccdirectorate.Model.ExpandedMenuModel;
 import com.jknccdirectorate.R;
 
@@ -77,55 +87,82 @@ public class MainActivity extends AppCompatActivity {
         expandableList.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
-
+                Fragment fragment = null;
+                getSupportFragmentManager().popBackStack();
                 switch (i) {
                     case 2:
                         switch (i1) {
                             case 0:
-                                //fragment = new AimFragment();
-                                webView.loadUrl("http://jknccdirectorate.com/aim.php");
+                                fragment = new AimFragment();
+                                //webView.loadUrl("http://jknccdirectorate.com/aim.php");
                                 break;
                             case 1:
-                                //fragment = new SongFragment();
-                                webView.loadUrl("http://jknccdirectorate.com/song.php");
+                                fragment = new SongFragment();
+                                //webView.loadUrl("http://jknccdirectorate.com/song.php");
                                 break;
                             case 2:
-                                //fragment = new PledgeFragment();
-                                webView.loadUrl("jknccdirectorate.com/pledge.php");
+                                fragment = new PledgeFragment();
+                                //webView.loadUrl("jknccdirectorate.com/pledge.php");
                                 break;
                         }
                         break;
                     case 3:
                         switch (i1) {
                             case 0:
-                                //fragment = new JammuFragment();
-                                webView.loadUrl("http://jknccdirectorate.com/org-jammu.php");
+                                fragment = new JammuFragment();
+                                //webView.loadUrl("http://jknccdirectorate.com/org-jammu.php");
                                 break;
                             case 1:
-                                //fragment = new KashmirFragment();
-                                webView.loadUrl("http://jknccdirectorate.com/org-srinagar.php");
+                                fragment = new KashmirFragment();
+                                // webView.loadUrl("http://jknccdirectorate.com/org-srinagar.php");
                                 break;
                         }
                         break;
-                   /* case 13:
+                    case 13:
                         switch (i1) {
                             case 0:
                                 //fragment = new EnrollmentFragment();
-                                webView.loadUrl("http://jknccdirectorate.com/aim.php");
+                                webView.loadUrl("http://jknccdirectorate.com/members.php");
                                 break;
                             case 1:
                                 //fragment = new AdminEventsFragment();
-                                webView.loadUrl("http://jknccdirectorate.com/aim.php");
+                                webView.loadUrl("http://jknccdirectorate.com/eventadd.php");
                                 break;
                             case 2:
                                 //fragment = new VerifyUserFragment();
-                                webView.loadUrl("http://jknccdirectorate.com/aim.php");
+                                webView.loadUrl("http://jknccdirectorate.com/AddGallery.php");
                                 break;
                             case 3:
                                 //fragment = new ReportsFragment();
-                                webView.loadUrl("http://jknccdirectorate.com/aim.php");
+                                webView.loadUrl("http://jknccdirectorate.com/addNotification.php");
                                 break;
-                        }*/
+                            case 4:
+                                //fragment = new ReportsFragment();
+                                webView.loadUrl("http://jknccdirectorate.com/status.php");
+                                break;
+                            case 5:
+                                //fragment = new ReportsFragment();
+                                webView.loadUrl("http://jknccdirectorate.com/training.php");
+                                break;
+                            case 6:
+                                //fragment = new ReportsFragment();
+                                webView.loadUrl("http://jknccdirectorate.com/socialActivity.php");
+                                break;
+                            case 7:
+                                //fragment = new ReportsFragment();
+                                webView.loadUrl("http://jknccdirectorate.com/report.php");
+                                break;
+                            case 8:
+                                //fragment = new ReportsFragment();
+                                webView.loadUrl("http://jknccdirectorate.com/reportTraining.php");
+                                break;
+                        }
+                }
+                if (fragment != null) {
+                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                    ft.addToBackStack(null);
+                    ft.replace(R.id.content_frame, fragment);
+                    ft.commit();
                 }
                 drawer.closeDrawer(GravityCompat.START);
                 return false;
@@ -134,60 +171,73 @@ public class MainActivity extends AppCompatActivity {
         expandableList.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
             @Override
             public boolean onGroupClick(ExpandableListView expandableListView, View view, int i, long l) {
+                Fragment fragment = null;
 
                 switch (i) {
                     case 0:
                         //fragment = new HomeFragment();
+                        getSupportFragmentManager().popBackStack();
                         webView.loadUrl("http://jknccdirectorate.com/index.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
 
                     case 1:
-                        //fragment = new AdgCornerFragment();
-                        webView.loadUrl("http://jknccdirectorate.com/adg-corner.php");
+                        getSupportFragmentManager().popBackStack();
+                        fragment = new AdgCornerFragment();
+                        //webView.loadUrl("http://jknccdirectorate.com/adg-corner.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
                     case 4:
-                        //fragment = new CoverageFragment();
-                        webView.loadUrl("http://jknccdirectorate.com/coverage.php");
+                        getSupportFragmentManager().popBackStack();
+                        fragment = new CoverageFragment();
+                        //webView.loadUrl("http://jknccdirectorate.com/coverage.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
                     case 5:
                         //fragment = new GalleryFragment();
+                        getSupportFragmentManager().popBackStack();
                         webView.loadUrl("http://jknccdirectorate.com/gallery.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
                     case 6:
-                        //fragment = new RdcFragment();
-                        webView.loadUrl("http://jknccdirectorate.com/rdc2017.php");
+                        getSupportFragmentManager().popBackStack();
+                        fragment = new RdcFragment();
+                        //webView.loadUrl("http://jknccdirectorate.com/rdc2017.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
                     case 7:
-                        //fragment = new RtiFragment();
-                        webView.loadUrl("http://jknccdirectorate.com/rti.php");
+                        getSupportFragmentManager().popBackStack();
+                        fragment = new RtiFragment();
+                        //webView.loadUrl("http://jknccdirectorate.com/rti.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
                     case 8:
-                        //fragment = new DownloadsFragment();
-                        webView.loadUrl("http://jknccdirectorate.com/download.php");
+                        getSupportFragmentManager().popBackStack();
+                        fragment = new DownloadsFragment();
+                        //webView.loadUrl("http://jknccdirectorate.com/download.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
                     case 9:
-                        //fragment = new ContactFragment();
-                        webView.loadUrl("http://jknccdirectorate.com/contact-us.php");
+                        getSupportFragmentManager().popBackStack();
+                        fragment = new ContactFragment();
+                        //webView.loadUrl("http://jknccdirectorate.com/contact-us.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
                     case 10:
-                        //fragment = new DisclaimerFragment();
-                        webView.loadUrl("http://jknccdirectorate.com/disclaimer.php");
+                        getSupportFragmentManager().popBackStack();
+                        fragment = new DisclaimerFragment();
+                        //webView.loadUrl("http://jknccdirectorate.com/disclaimer.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
+
                    /* case 11:
                         //fragment = new FeedbackFragment();
                         webView.loadUrl("http://jknccdirectorate.com/aim.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
-                   */ case 12:
+                   */
+                    case 12:
+                        getSupportFragmentManager().popBackStack();
                         //fragment = new EventsFragment();
                         webView.loadUrl("http://jknccdirectorate.com/event.php");
                         drawer.closeDrawer(GravityCompat.START);
@@ -195,13 +245,17 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
-                //ft.replace(R.id.content_frame, fragment);
-                //ft.commit();
+                if (fragment != null) {
+                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                    ft.addToBackStack(null);
+                    ft.replace(R.id.content_frame, fragment);
+                    ft.commit();
+                }
                 return false;
             }
         });
 
-        login.setOnClickListener(new View.OnClickListener() {
+        /*login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DialogFragment newFragment = new FragmentLogin();
@@ -216,7 +270,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+*/
         selectHome();
     }
 
@@ -226,8 +280,8 @@ public class MainActivity extends AppCompatActivity {
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         expandableList = (ExpandableListView) findViewById(R.id.navigationmenu);
-        login = (FloatingActionButton) findViewById(R.id.btn_login);
-        register = (FloatingActionButton) findViewById(R.id.btn_register);
+        // login = (FloatingActionButton) findViewById(R.id.btn_login);
+        //register = (FloatingActionButton) findViewById(R.id.btn_register);
         webView = (WebView) findViewById(R.id.webView);
     }
 
@@ -245,10 +299,9 @@ public class MainActivity extends AppCompatActivity {
         expandableList.performItemClick(childToClick, flatPos, id);
     }
 
-    private void setupWebview()
-    {
+    private void setupWebview() {
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.setWebViewClient(new WebViewClient(){
+        webView.setWebViewClient(new WebViewClient() {
 
             @RequiresApi(Build.VERSION_CODES.N)
             @Override
@@ -259,14 +312,14 @@ public class MainActivity extends AppCompatActivity {
 
             @SuppressWarnings("deprecation")
             @Override
-                public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                if(Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
                     Log.d("Url", url);
                     view.loadUrl(url);
 
                 }
                 return true;
-                }
+            }
 
             public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
                 Toast.makeText(getApplicationContext(), "We are getting things fixed..", Toast.LENGTH_SHORT).show();
@@ -276,7 +329,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPageFinished(WebView view, String url) {
 
-        }
+            }
         });
 
         webView.setWebChromeClient
@@ -297,7 +350,6 @@ public class MainActivity extends AppCompatActivity {
                                 stringBuilder.append(removeFirstHeader);
                                 stringBuilder.append(removeFooter);
                                 stringBuilder.append(removeLogin);
-
 
 
                                 stringBuilder.append("} ) ()");
@@ -335,9 +387,14 @@ public class MainActivity extends AppCompatActivity {
 
         List<String> admin = new ArrayList<>();
         admin.add(getResources().getString(R.string.enrollment));
-        admin.add(getResources().getString(R.string.events_admin));
-        admin.add(getResources().getString(R.string.verify));
-        admin.add(getResources().getString(R.string.reports));
+        admin.add(getResources().getString(R.string.add_event));
+        admin.add(getResources().getString(R.string.add_gallery));
+        admin.add(getResources().getString(R.string.add_notification));
+        admin.add(getResources().getString(R.string.update));
+        admin.add(getResources().getString(R.string.training));
+        admin.add(getResources().getString(R.string.social));
+        admin.add(getResources().getString(R.string.report));
+        admin.add(getResources().getString(R.string.report_training));
 
         listDataChild.put(listDataHeader.get(2), about);// Header, Child data
         listDataChild.put(listDataHeader.get(3), org);

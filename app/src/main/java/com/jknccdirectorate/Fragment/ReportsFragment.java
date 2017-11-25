@@ -18,7 +18,7 @@ public class ReportsFragment extends Fragment {
 
     public void onResume() {
         super.onResume();
-        ((MainActivity) getActivity()).setActionBarTitle(getResources().getString(R.string.reports));
+        ((MainActivity) getActivity()).setActionBarTitle(getResources().getString(R.string.report));
     }
 
     @Override

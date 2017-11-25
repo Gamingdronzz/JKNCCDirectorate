@@ -31,11 +31,16 @@
     <string name="disclaimer">Disclaimer</string>
     <string name="feedback">Feedback</string>
     <string name="events">Events</string>
-    <string name="admin">Admin Panel</string>
+    <string name="staff_links">Staff Links</string>
     <string name="enrollment">Enrollment</string>
-    <string name="events_admin">Events</string>
-    <string name="verify">Verify User</string>
-    <string name="reports">Reports</string>
+    <string name="add_event">Add Event</string>
+    <string name="add_gallery">Add Gallery</string>
+    <string name="add_notification">Add Notification</string>
+    <string name="update">Update Status</string>
+    <string name="training">Training Submission</string>
+    <string name="social">Social Actvity</string>
+    <string name="report">Report</string>
+    <string name="report_training">Report Training</string>
 
     <array name="menu">
         <item>@string/home</item>
@@ -51,7 +56,7 @@
         <item>@string/disclaimer</item>
         <item>@string/feedback</item>
         <item>@string/events</item>
-        <item>@string/admin</item>
+        <item>@string/staff_links</item>
     </array>
 
 

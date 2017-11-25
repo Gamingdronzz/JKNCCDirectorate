@@ -30,7 +30,7 @@ public class AdminEventsFragment extends Fragment {
 
     public void onResume() {
         super.onResume();
-        ((MainActivity) getActivity()).setActionBarTitle(getResources().getString(R.string.events_admin));
+        ((MainActivity) getActivity()).setActionBarTitle(getResources().getString(R.string.staff_links));
 
     }
 
