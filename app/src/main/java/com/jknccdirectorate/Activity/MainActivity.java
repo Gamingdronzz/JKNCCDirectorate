@@ -1,8 +1,11 @@
 package com.jknccdirectorate.Activity;
 
+import android.annotation.TargetApi;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.DialogFragment;
@@ -12,9 +15,15 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
+import android.webkit.WebChromeClient;
+import android.webkit.WebResourceError;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ExpandableListView;
+import android.widget.Toast;
 
 import com.jknccdirectorate.Adapter.ExpandableListAdapter;
 import com.jknccdirectorate.Fragment.FragmentLogin;
@@ -37,6 +46,13 @@ public class MainActivity extends AppCompatActivity {
     private FloatingActionButton login, register;
     final String TAG = "Main";
 
+    final String removeHeader = "document.getElementsByClassName('page-banner-section')[0].style.display=\"none\"; ";
+    final String removeFirstHeader = "document.getElementsByClassName('firstheader')[0].style.display=\"none\"; ";
+    final String removeLogin = "document.getElementsById('logindiv')[0].style.display=\"none\"; ";
+    final String removeFooter = "document.getElementsByClassName('footer ')[0].style.display=\"none\"; ";
+
+    //final String removeTopModules = "document.getElementById('top-modules').style.display=\"none\"; ";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +60,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         findviews();
-        webView.getSettings().setJavaScriptEnabled(true);
+        setupWebview();
+
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -228,6 +245,72 @@ public class MainActivity extends AppCompatActivity {
         expandableList.performItemClick(childToClick, flatPos, id);
     }
 
+    private void setupWebview()
+    {
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.setWebViewClient(new WebViewClient(){
+
+            @RequiresApi(Build.VERSION_CODES.N)
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                view.loadUrl(request.getUrl().toString());
+                return super.shouldOverrideUrlLoading(view, request);
+            }
+
+            @SuppressWarnings("deprecation")
+            @Override
+                public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                if(Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
+                    Log.d("Url", url);
+                    view.loadUrl(url);
+
+                }
+                return true;
+                }
+
+            public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
+                Toast.makeText(getApplicationContext(), "We are getting things fixed..", Toast.LENGTH_SHORT).show();
+            }
+
+
+            @Override
+            public void onPageFinished(WebView view, String url) {
+
+        }
+        });
+
+        webView.setWebChromeClient
+                (
+                        new WebChromeClient() {
+                            @Override
+                            public void onProgressChanged(WebView view, int newProgress) {
+                                StringBuilder stringBuilder = new StringBuilder();
+                                stringBuilder.append("javascript:");
+                                stringBuilder.append("(function() { ");
+
+                                //This is where we can remove all those classes which we dont need
+                                //Just create a variable on top
+                                //give it a value ( you can find the samples from other variables
+                                //i have used string builder in case we want to remove something only on selected options
+
+                                stringBuilder.append(removeHeader);
+                                stringBuilder.append(removeFirstHeader);
+                                stringBuilder.append(removeFooter);
+                                stringBuilder.append(removeLogin);
+
+
+
+                                stringBuilder.append("} ) ()");
+                                view.loadUrl(stringBuilder.toString());
+
+                            }
+
+
+                        }
+
+
+                );
+    }
 
     private void prepareListData() {
         listDataHeader = new ArrayList<ExpandedMenuModel>();
