@@ -24,8 +24,9 @@
                 android:padding="@dimen/padding_medium"
                 android:text="MESSAGE OF MAJ GEN NILENDRA KUMAR, ADG NCC J&amp;K"
                 android:textAlignment="center"
-                android:textColor="@color/colorBlack"
+                android:textColor="@color/colorOffWhite"
                 android:textSize="@dimen/text_20"
+                android:typeface="serif"
                 android:textStyle="bold" />
 
             <ImageView
@@ -41,7 +42,8 @@
             android:layout_height="match_parent"
             android:padding="@dimen/padding_large"
             android:text="@string/adg_content"
-            android:textColor="@color/colorBlack"
-            android:textSize="@dimen/text_15" />
+            android:textColor="@color/colorWhite"
+            android:fontFamily="sans-serif"
+            android:textSize="17sp" />
     </LinearLayout>
 </ScrollView>
