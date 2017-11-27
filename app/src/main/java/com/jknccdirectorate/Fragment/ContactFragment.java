@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.OvershootInterpolator;
 
 import com.jknccdirectorate.Activity.MainActivity;
 import com.jknccdirectorate.Adapter.RecyclerViewAdapterLocation;
@@ -36,12 +37,14 @@ public class ContactFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_contact, container, false);
         recyclerView = (RecyclerView) view.findViewById(R.id.locations);
-        list = getLocationList();
+        list = new ArrayList<>();
         latitude = getLatList();
         longitude = getLongList();
         adapter = new RecyclerViewAdapterLocation(list);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.getItemAnimator().setAddDuration(1000);
+        getLocationList();
 
         recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
 
@@ -107,14 +110,23 @@ public class ContactFragment extends Fragment {
 
     private ArrayList<String> getLocationList() {
         list.add("NCC Directorate, J&K");
+        adapter.notifyItemInserted(0);
         list.add("Group Headquarters, Jammu");
+        adapter.notifyItemInserted(1);
         list.add("Group Headquarters, Srinagar");
+        adapter.notifyItemInserted(2);
         list.add("2 J&K Battalion NCC Jammu");
+        adapter.notifyItemInserted(3);
         list.add("2 J&K Girls Battalion NCC Jammu");
+        adapter.notifyItemInserted(4);
         list.add("1 J&K Armed Squadron NCC Jammu");
+        adapter.notifyItemInserted(5);
         list.add("1 J&K Artillery Battalion NCC  Poonch");
+        adapter.notifyItemInserted(6);
         list.add("2 J&K (I) Coy  NCC Bhaderwah");
+        adapter.notifyItemInserted(7);
         list.add("JD (I) Coy NCC  SS Nagrota ");
+        adapter.notifyItemInserted(8);
         return list;
     }
 

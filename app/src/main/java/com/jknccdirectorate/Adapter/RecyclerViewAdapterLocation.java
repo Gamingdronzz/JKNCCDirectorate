@@ -19,6 +19,7 @@ public class RecyclerViewAdapterLocation extends RecyclerView.Adapter<RecyclerVi
     ArrayList<String> locationArray;
 
     public RecyclerViewAdapterLocation(ArrayList<String> locationArray) {
+        setHasStableIds(true);
         this.locationArray = locationArray;
     }
 
