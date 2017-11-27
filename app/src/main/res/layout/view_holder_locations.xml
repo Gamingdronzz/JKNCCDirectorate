@@ -2,14 +2,23 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical">
+    android:background="@color/colorLightGray"
+    android:layout_marginTop="@dimen/margin_medium"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="@dimen/margin_medium"
+        android:tint="@color/colorMehroon"
+        android:src="@drawable/ic_action_location"/>
+
 
     <TextView
         android:id="@+id/loc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorLightGray"
         android:padding="@dimen/activity_horizontal_margin"
         android:textColor="@color/colorBlack"
         android:textSize="@dimen/text_15" />
