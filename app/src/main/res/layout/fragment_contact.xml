@@ -21,7 +21,7 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/locations"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:paddingTop="@dimen/padding_medium"
             android:paddingBottom="@dimen/padding_medium">
 
