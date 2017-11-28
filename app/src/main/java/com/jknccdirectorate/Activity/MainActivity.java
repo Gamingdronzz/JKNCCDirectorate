@@ -270,7 +270,7 @@ public class MainActivity extends AppCompatActivity {
         /*login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogFragment newFragment = new FragmentLogin();
+                DialogFragment newFragment = new LoginFragment();
                 newFragment.show(getSupportFragmentManager(), "LOG_IN");
             }
         });

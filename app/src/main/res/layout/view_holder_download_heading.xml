@@ -4,7 +4,7 @@ android:id="@+id/llContainer"
 android:layout_width="match_parent"
 android:layout_height="wrap_content"
 android:orientation="vertical">
-
+<!--
     <View
         android:layout_width="match_parent"
         android:layout_height="3dp"
@@ -13,19 +13,21 @@ android:orientation="vertical">
         android:background="@color/colorBlack">
 
     </View>
-
+-->
     <TextView
         android:id="@+id/download_heading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorAccent"
         android:padding="@dimen/padding_medium"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_20"
         android:textAlignment="center"
         android:textColor="@color/colorWhite">
 
     </TextView>
 
-
+<!--
 
     <View
         android:layout_width="match_parent"
@@ -33,6 +35,8 @@ android:orientation="vertical">
         android:layout_height="3dp"
         android:background="@color/colorBlack">
     </View>
+
+    -->
 
 
 </LinearLayout>

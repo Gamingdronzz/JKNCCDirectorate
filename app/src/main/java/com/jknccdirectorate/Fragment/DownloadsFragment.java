@@ -13,6 +13,7 @@ import com.jknccdirectorate.Activity.MainActivity;
 import com.jknccdirectorate.Adapter.ComplexRecyclerViewAdapter;
 import com.jknccdirectorate.Model.DownloadHeadingModel;
 import com.jknccdirectorate.Model.DownloadItemModel;
+import com.jknccdirectorate.Model.SpaceModel;
 import com.jknccdirectorate.R;
 
 import java.util.ArrayList;
@@ -65,9 +66,11 @@ public class DownloadsFragment extends Fragment {
         items.add(new DownloadHeadingModel("HAND BOOK"));
         items.add(new DownloadItemModel("ANO HANDBOOK","http://jknccdirectorate.com/downloads/handbooks/ano-handbook.pdf"));
         items.add(new DownloadItemModel("PI STAFF HANDBOOK HINDI","http://jknccdirectorate.com/downloads/handbooks/pi-staff-handbook-hindi.pdf"));
+        items.add(new SpaceModel());
         items.add(new DownloadHeadingModel("NCC ACT AND RULES"));
         items.add(new DownloadItemModel("NCC ACT 1948","http://jknccdirectorate.com/downloads/ncc-act-rules/ncc-act-1948.pdf"));
         items.add(new DownloadItemModel("NCC RULES","http://jknccdirectorate.com/downloads/ncc-act-rules/ncc-rules.pdf"));
+        items.add(new SpaceModel());
         items.add(new DownloadHeadingModel("SYLLABUS"));
         items.add(new DownloadItemModel("COMMON SUBJECTS JD JW","http://jknccdirectorate.com/downloads/syllabus/common-subjects-jd-jw.pdf"));
         items.add(new DownloadItemModel("COMMON SUBJECTS SD SW","http://jknccdirectorate.com/downloads/syllabus/common-subjects-sd-sw.pdf"));
@@ -75,6 +78,7 @@ public class DownloadsFragment extends Fragment {
         items.add(new DownloadItemModel("SPECIALISED SUBJECTS SD SW","http://jknccdirectorate.com/downloads/syllabus/specialised-subjects-sd-sw.pdf"));
         items.add(new DownloadItemModel("PERSONALITY DEVELOPMENT SYLLABUS","http://jknccdirectorate.com/downloads/syllabus/personality-devp-syllabus.pdf"));
         items.add(new DownloadItemModel("TRAINING SYLLABUS CONSOLIDATED","http://jknccdirectorate.com/downloads/syllabus/trg-syllabus-consolidated.pdf"));
+        items.add(new SpaceModel());
         items.add(new DownloadHeadingModel("OTHER"));
         items.add(new DownloadItemModel("ELIGIBILITY CERTIFICATE EXAMS","http://jknccdirectorate.com/downloads/others/eligibility-cert-exams.docx"));
         items.add(new DownloadItemModel("NCC GENERAL INFO","http://jknccdirectorate.com/downloads/others/ncc-gen-info.docx"));

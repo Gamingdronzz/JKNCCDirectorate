@@ -14,10 +14,12 @@ import com.jknccdirectorate.Model.DownloadItemModel;
 import com.jknccdirectorate.Model.DropdownModel;
 import com.jknccdirectorate.Model.EditTextModel;
 import com.jknccdirectorate.Model.DownloadHeadingModel;
+import com.jknccdirectorate.Model.SpaceModel;
 import com.jknccdirectorate.R;
 import com.jknccdirectorate.ViewHolders.ViewHolderDownloadHeading;
 import com.jknccdirectorate.ViewHolders.ViewHolderDropdown;
 import com.jknccdirectorate.ViewHolders.ViewHolderEditText;
+import com.jknccdirectorate.ViewHolders.ViewHolderSpace;
 
 import java.util.ArrayList;
 
@@ -37,7 +39,7 @@ public class ComplexRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
             DOWNLOADHEADING = 3,
             DOWNLOADITEM = 4,
             DIVIDER = 5,
-            MULTISELECT = 6,
+            SPACE = 6,
             DATE = 7,
             IMAGE = 8;
 
@@ -57,6 +59,8 @@ public class ComplexRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
             return DOWNLOADHEADING;
         else if (items.get(position) instanceof DownloadItemModel)
             return DOWNLOADITEM;
+        else if (items.get(position) instanceof SpaceModel)
+            return SPACE;
         else
             return -1;
     }
@@ -86,6 +90,10 @@ public class ComplexRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
             case DOWNLOADITEM:
                 View downloadItemView = inflater.inflate(R.layout.view_holder_download_item, parent, false);
                 viewHolder = new ViewHolderDownloadItem(downloadItemView,new CustomOnClickListener());
+                break;
+            case SPACE:
+                View SpaceView = inflater.inflate(R.layout.view_holder_space, parent, false);
+                viewHolder = new ViewHolderSpace(SpaceView);
                 break;
         }
         return viewHolder;
