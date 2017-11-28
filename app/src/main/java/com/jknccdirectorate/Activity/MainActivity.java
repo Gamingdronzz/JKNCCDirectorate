@@ -122,39 +122,48 @@ public class MainActivity extends AppCompatActivity {
                         switch (i1) {
                             case 0:
                                 //fragment = new EnrollmentFragment();
-                                webView.loadUrl("http://jknccdirectorate.com/members.php");
+                                //webView.loadUrl("http://jknccdirectorate.com/members.php");
+                                Toast.makeText(MainActivity.this, "Not Available", Toast.LENGTH_SHORT).show();
                                 break;
                             case 1:
                                 //fragment = new AdminEventsFragment();
-                                webView.loadUrl("http://jknccdirectorate.com/eventadd.php");
+                                //webView.loadUrl("http://jknccdirectorate.com/eventadd.php");
+                                Toast.makeText(MainActivity.this, "Not Available", Toast.LENGTH_SHORT).show();
                                 break;
                             case 2:
                                 //fragment = new VerifyUserFragment();
-                                webView.loadUrl("http://jknccdirectorate.com/AddGallery.php");
+                                Toast.makeText(MainActivity.this, "Not Available", Toast.LENGTH_SHORT).show();
+                                //webView.loadUrl("http://jknccdirectorate.com/AddGallery.php");
                                 break;
                             case 3:
                                 //fragment = new ReportsFragment();
-                                webView.loadUrl("http://jknccdirectorate.com/addNotification.php");
+                                Toast.makeText(MainActivity.this, "Not Available", Toast.LENGTH_SHORT).show();
+                                //webView.loadUrl("http://jknccdirectorate.com/addNotification.php");
                                 break;
                             case 4:
                                 //fragment = new ReportsFragment();
-                                webView.loadUrl("http://jknccdirectorate.com/status.php");
+                                Toast.makeText(MainActivity.this, "Not Available", Toast.LENGTH_SHORT).show();
+                                // webView.loadUrl("http://jknccdirectorate.com/status.php");
                                 break;
                             case 5:
                                 //fragment = new ReportsFragment();
-                                webView.loadUrl("http://jknccdirectorate.com/training.php");
+                                Toast.makeText(MainActivity.this, "Not Available", Toast.LENGTH_SHORT).show();
+                                //webView.loadUrl("http://jknccdirectorate.com/training.php");
                                 break;
                             case 6:
                                 //fragment = new ReportsFragment();
-                                webView.loadUrl("http://jknccdirectorate.com/socialActivity.php");
+                                Toast.makeText(MainActivity.this, "Not Available", Toast.LENGTH_SHORT).show();
+                                //webView.loadUrl("http://jknccdirectorate.com/socialActivity.php");
                                 break;
                             case 7:
                                 //fragment = new ReportsFragment();
-                                webView.loadUrl("http://jknccdirectorate.com/report.php");
+                                Toast.makeText(MainActivity.this, "Not Available", Toast.LENGTH_SHORT).show();
+                                // webView.loadUrl("http://jknccdirectorate.com/report.php");
                                 break;
                             case 8:
                                 //fragment = new ReportsFragment();
-                                webView.loadUrl("http://jknccdirectorate.com/reportTraining.php");
+                                Toast.makeText(MainActivity.this, "Not Available", Toast.LENGTH_SHORT).show();
+                                //webView.loadUrl("http://jknccdirectorate.com/reportTraining.php");
                                 break;
                         }
                 }
@@ -177,7 +186,8 @@ public class MainActivity extends AppCompatActivity {
                     case 0:
                         //fragment = new HomeFragment();
                         getSupportFragmentManager().popBackStack();
-                        webView.loadUrl("http://jknccdirectorate.com/index.php");
+                        Toast.makeText(MainActivity.this,"Not Available",Toast.LENGTH_SHORT).show();
+                        // webView.loadUrl("http://jknccdirectorate.com/index.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
 
@@ -196,7 +206,8 @@ public class MainActivity extends AppCompatActivity {
                     case 5:
                         //fragment = new GalleryFragment();
                         getSupportFragmentManager().popBackStack();
-                        webView.loadUrl("http://jknccdirectorate.com/gallery.php");
+                        Toast.makeText(MainActivity.this, "Not Available", Toast.LENGTH_SHORT).show();
+                        //webView.loadUrl("http://jknccdirectorate.com/gallery.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
                     case 6:
@@ -239,7 +250,8 @@ public class MainActivity extends AppCompatActivity {
                     case 12:
                         getSupportFragmentManager().popBackStack();
                         //fragment = new EventsFragment();
-                        webView.loadUrl("http://jknccdirectorate.com/event.php");
+                        Toast.makeText(MainActivity.this, "Not Available", Toast.LENGTH_SHORT).show();
+                        //webView.loadUrl("http://jknccdirectorate.com/event.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
 
