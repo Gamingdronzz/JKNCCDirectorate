@@ -7,13 +7,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorOffWhite"
+        android:background="@drawable/back"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:orientation="vertical">
 
             <ImageView
@@ -27,7 +26,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorBlack"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:background="@color/colorAccent"
                 android:gravity="center_horizontal|center_vertical"
                 android:padding="@dimen/padding_medium"
                 android:text="MESSAGE OF MAJ GEN NILENDRA KUMAR, ADG NCC J&amp;K"
@@ -41,10 +42,13 @@
         <com.uncopt.android.widget.text.justify.JustifiedTextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fontFamily="sans-serif"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:background="@color/colorWhite"
+            android:fontFamily="serif"
             android:padding="@dimen/padding_large"
             android:text="@string/adg_content"
             android:textColor="@color/colorBlack"
-            android:textSize="17sp" />
+            android:textSize="@dimen/text_15" />
     </LinearLayout>
 </ScrollView>
