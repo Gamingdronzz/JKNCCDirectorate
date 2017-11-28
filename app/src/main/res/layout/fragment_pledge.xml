@@ -20,6 +20,7 @@
             android:layout_height="match_parent"
             android:background="@color/colorWhite"
             android:fontFamily="serif"
+            android:text="@string/pledge_content"
             android:padding="@dimen/activity_vertical_margin"
             android:textColor="@color/colorBlack"
             android:textSize="17sp" />
