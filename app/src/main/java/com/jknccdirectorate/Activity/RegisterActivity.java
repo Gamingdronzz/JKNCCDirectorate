@@ -30,7 +30,7 @@ public class RegisterActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Register");
 
         findviews();
-        adapter = new ComplexRecyclerViewAdapter(getSampleArrayList());
+        adapter = new ComplexRecyclerViewAdapter(getSampleArrayList(),null,null);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
     }
