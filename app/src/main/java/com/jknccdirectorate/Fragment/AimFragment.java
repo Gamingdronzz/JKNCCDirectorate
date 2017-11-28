@@ -8,12 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.TextView;
+import android.widget.LinearLayout;
 
 import com.jknccdirectorate.Activity.MainActivity;
 import com.jknccdirectorate.R;
-import com.uncopt.android.widget.text.justify.JustifiedEditText;
-import com.uncopt.android.widget.text.justify.JustifiedTextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,7 +19,7 @@ import com.uncopt.android.widget.text.justify.JustifiedTextView;
 public class AimFragment extends Fragment {
 
     Animation animationTranslate1, animationTranslate2, animationTranslate3;
-    JustifiedTextView textView1, textView2, textView3;
+    LinearLayout layout1, layout2, layout3;
 
     public AimFragment() {
         // Required empty public constructor
@@ -33,12 +31,12 @@ public class AimFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_aim, container, false);
-        textView1 = (JustifiedTextView) view.findViewById(R.id.aim1);
-        textView2 = (JustifiedTextView) view.findViewById(R.id.aim2);
-        textView3 = (JustifiedTextView) view.findViewById(R.id.aim3);
-        textView1.setVisibility(View.INVISIBLE);
-        textView2.setVisibility(View.INVISIBLE);
-        textView3.setVisibility(View.INVISIBLE);
+        layout1 = (LinearLayout) view.findViewById(R.id.aim1);
+        layout2 = (LinearLayout) view.findViewById(R.id.aim2);
+        layout3 = (LinearLayout) view.findViewById(R.id.aim3);
+        layout1.setVisibility(View.INVISIBLE);
+        layout2.setVisibility(View.INVISIBLE);
+        layout3.setVisibility(View.INVISIBLE);
         setupAnimations(view);
 
         return view;
@@ -51,9 +49,9 @@ public class AimFragment extends Fragment {
         animationTranslate1.reset();
         animationTranslate2.reset();
         animationTranslate3.reset();
-        textView1.setVisibility(View.VISIBLE);
+        layout1.setVisibility(View.VISIBLE);
 
-        textView1.startAnimation(animationTranslate1);
+        layout1.startAnimation(animationTranslate1);
         animationTranslate1.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
@@ -62,9 +60,9 @@ public class AimFragment extends Fragment {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                textView2.setVisibility(View.VISIBLE);
+                layout2.setVisibility(View.VISIBLE);
 
-                textView2.startAnimation(animationTranslate2);
+                layout2.startAnimation(animationTranslate2);
             }
 
             @Override
@@ -81,8 +79,8 @@ public class AimFragment extends Fragment {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                textView3.setVisibility(View.VISIBLE);
-                textView3.startAnimation(animationTranslate3);
+                layout3.setVisibility(View.VISIBLE);
+                layout3.startAnimation(animationTranslate3);
             }
 
             @Override
