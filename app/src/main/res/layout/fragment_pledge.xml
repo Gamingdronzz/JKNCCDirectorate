@@ -4,25 +4,106 @@
     android:layout_height="match_parent"
     android:background="@drawable/back"
     android:paddingTop="@dimen/margin_xlarge"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
     tools:context="com.jknccdirectorate.Fragment.AimFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding=".5dp"
-        android:background="@color/colorLightBlack"
-        android:orientation="horizontal">
+        android:background="@android:color/transparent"
+        android:orientation="vertical">
 
-        <com.uncopt.android.widget.text.justify.JustifiedTextView
+        <LinearLayout
+            android:id="@+id/pledge1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorWhite"
-            android:fontFamily="serif"
-            android:text="@string/pledge_content"
-            android:padding="@dimen/activity_vertical_margin"
-            android:textColor="@color/colorBlack"
-            android:textSize="17sp" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/colorBlack"></View>
+
+            <com.uncopt.android.widget.text.justify.JustifiedTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite"
+                android:fontFamily="serif"
+                android:padding="@dimen/activity_vertical_margin"
+                android:text="@string/pledge_content1"
+                android:textColor="@color/colorBlack"
+                android:textSize="17sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/colorBlack"></View>
+
+        </LinearLayout>
+
+        <android.support.v4.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_medium" />
+
+        <LinearLayout
+            android:id="@+id/pledge2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/colorBlack"></View>
+
+            <com.uncopt.android.widget.text.justify.JustifiedTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite"
+                android:fontFamily="serif"
+                android:padding="@dimen/activity_vertical_margin"
+                android:text="@string/pledge_content1"
+                android:textColor="@color/colorBlack"
+                android:textSize="17sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/colorBlack"></View>
+
+        </LinearLayout>
+
+        <android.support.v4.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_medium" />
+
+        <LinearLayout
+            android:id="@+id/pledge3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/colorBlack"></View>
+
+            <com.uncopt.android.widget.text.justify.JustifiedTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite"
+                android:fontFamily="serif"
+                android:padding="@dimen/activity_vertical_margin"
+                android:text="@string/pledge_content1"
+                android:textColor="@color/colorBlack"
+                android:textSize="17sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/colorBlack"></View>
+
+        </LinearLayout>
+
     </LinearLayout>
+
 </ScrollView>

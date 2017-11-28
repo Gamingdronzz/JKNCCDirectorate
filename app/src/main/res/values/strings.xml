@@ -61,11 +61,11 @@
 
     <string name="contact_us_location">Click to Open Location</string>
 
-    <string name="aim_content1"><li>To develop qualities of character, courage, comradeship, discipline, leadership, secular outlook, spirit of adventure and sportsmanship and the ideals of selfless service among the youth to make them useful citizens.</li></string>
+    <string name="aim_content1">To develop qualities of character, courage, comradeship, discipline, leadership, secular outlook, spirit of adventure and sportsmanship and the ideals of selfless service among the youth to make them useful citizens.</string>
 
-    <string name="aim_content2"><li>To create a human resource of organised, trained and activated youth, to provide leadership in all walks of life including the Armed Forces and always available for the service of the nation.</li></string>
+    <string name="aim_content2">To create a human resource of organised, trained and activated youth, to provide leadership in all walks of life including the Armed Forces and always available for the service of the nation.</string>
 
-    <string name="aim_content3"><li>To create suitable environment to motivate the youth to take up a career in the armed forces.</li></string>
+    <string name="aim_content3">To create suitable environment to motivate the youth to take up a career in the armed forces.</string>
 
     <string name="song_content_english">Hum Sab Bharatiya Hain, Hum Sab Bharatiya Hain
 \nApni Manzil Ek Hai,\nHa, Ha, Ha, Ek Hai,\nHo, Ho, Ho, Ek Hai.\nHum Sab Bharatiya Hain.
@@ -83,10 +83,14 @@
 \n\nएक ही अपना राम हैं, एक ही अल्लाह ताला है,\nएक ही अल्लाह ताला हैं|\nरंग बिरंगे दीपक हैं हम, लेकिन जगमग एक है,
 \n\nहा हा हा एक है, हो हो हो एक है|\nहम सब भारतीय हैं, हम सब भारतीय हैं</string>
 
-    <string name="pledge_content">\nWe the cadets of the national cadet corps, do soloemely pledge that we shall always uphold the unity of india.
-\n\nWe resolve to be disciplined and responsible citizens of our nation.
-\n\nWe shall undertake positive community service in the spirit of selflessness and concern for our fellow beings.
+    <string name="pledge_content1">We the cadets of the national cadet corps, do soloemely pledge that we shall always uphold the unity of india.
     </string>
+
+<string name="pledge_content2">We resolve to be disciplined and responsible citizens of our nation.
+</string>
+
+<string name="pledge_content3">We shall undertake positive community service in the spirit of selflessness and concern for our fellow beings.
+</string>
 
     <string name="adg_content">Today is a landmark day in the history of NCC Dte J&amp;K, wherein with the launch of NCC Dte J&amp;K Website and Application - the process of automation of enrolment commences.\n
     \n National Cadet Corps is committed to converting youth of our State into responsible citizens. NCC also fosters national integration and communal harmony.\n
