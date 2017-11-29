@@ -143,46 +143,46 @@ public class MainActivity extends AppCompatActivity implements VolleyHelper.Voll
                             case 0:
                                 //fragment = new EnrollmentFragment();
                                 //webView.loadUrl("http://jknccdirectorate.com/members.php");
-                                Toast.makeText(MainActivity.this, "Not Available", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Enrollment Under Construction..", Toast.LENGTH_SHORT).show();
                                 break;
                             case 1:
                                 //fragment = new AdminEventsFragment();
                                 //webView.loadUrl("http://jknccdirectorate.com/eventadd.php");
-                                Toast.makeText(MainActivity.this, "Not Available", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Events Under Construction..", Toast.LENGTH_SHORT).show();
                                 break;
                             case 2:
                                 //fragment = new VerifyUserFragment();
-                                Toast.makeText(MainActivity.this, "Not Available", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Gallery Under Construction..", Toast.LENGTH_SHORT).show();
                                 //webView.loadUrl("http://jknccdirectorate.com/AddGallery.php");
                                 break;
                             case 3:
                                 //fragment = new ReportsFragment();
-                                Toast.makeText(MainActivity.this, "Not Available", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Notices Under Construction..", Toast.LENGTH_SHORT).show();
                                 //webView.loadUrl("http://jknccdirectorate.com/addNotification.php");
                                 break;
                             case 4:
                                 //fragment = new ReportsFragment();
-                                Toast.makeText(MainActivity.this, "Not Available", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Under Construction..", Toast.LENGTH_SHORT).show();
                                 // webView.loadUrl("http://jknccdirectorate.com/status.php");
                                 break;
                             case 5:
                                 //fragment = new ReportsFragment();
-                                Toast.makeText(MainActivity.this, "Not Available", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Training Module Under Construction..", Toast.LENGTH_SHORT).show();
                                 //webView.loadUrl("http://jknccdirectorate.com/training.php");
                                 break;
                             case 6:
                                 //fragment = new ReportsFragment();
-                                Toast.makeText(MainActivity.this, "Not Available", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Social Activity Under Construction..", Toast.LENGTH_SHORT).show();
                                 //webView.loadUrl("http://jknccdirectorate.com/socialActivity.php");
                                 break;
                             case 7:
                                 //fragment = new ReportsFragment();
-                                Toast.makeText(MainActivity.this, "Not Available", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Reports Under Construction..", Toast.LENGTH_SHORT).show();
                                 // webView.loadUrl("http://jknccdirectorate.com/report.php");
                                 break;
                             case 8:
                                 //fragment = new ReportsFragment();
-                                Toast.makeText(MainActivity.this, "Not Available", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Under Construction..", Toast.LENGTH_SHORT).show();
                                 //webView.loadUrl("http://jknccdirectorate.com/reportTraining.php");
                                 break;
                         }
@@ -206,7 +206,7 @@ public class MainActivity extends AppCompatActivity implements VolleyHelper.Voll
                     case 0:
                         //fragment = new HomeFragment();
                         getSupportFragmentManager().popBackStack();
-                        Toast.makeText(MainActivity.this, "Not Available", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Under Construction..", Toast.LENGTH_SHORT).show();
                         // webView.loadUrl("http://jknccdirectorate.com/index.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
@@ -226,7 +226,7 @@ public class MainActivity extends AppCompatActivity implements VolleyHelper.Voll
                     case 5:
                         //fragment = new GalleryFragment();
                         getSupportFragmentManager().popBackStack();
-                        Toast.makeText(MainActivity.this, "Not Available", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Under Construction..", Toast.LENGTH_SHORT).show();
                         //webView.loadUrl("http://jknccdirectorate.com/gallery.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
@@ -270,7 +270,7 @@ public class MainActivity extends AppCompatActivity implements VolleyHelper.Voll
                     case 12:
                         getSupportFragmentManager().popBackStack();
                         //fragment = new EventsFragment();
-                        Toast.makeText(MainActivity.this, "Not Available", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Under Construction..", Toast.LENGTH_SHORT).show();
                         //webView.loadUrl("http://jknccdirectorate.com/event.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
@@ -518,13 +518,18 @@ public class MainActivity extends AppCompatActivity implements VolleyHelper.Voll
 
 
         try {
-            if (jsonObject.get("result").equals("1")) {
+            if (jsonObject.get("result").equals(helper.SUCCESS)) {
                 Toast.makeText(getApplicationContext(), "Succesfully Logged In", Toast.LENGTH_LONG).show();
                 login.setVisibility(View.GONE);
-                showStaffLinks();
+                //Role value for determining what type of user is logging in.
+                //There are 4 types viz: Cadet,Staff Member, ANO,Commander
+                int role = jsonObject.getInt("role");
+                if(role>=1) {
+                    showStaffLinks();
+                }
+
             } else {
                 Toast.makeText(getApplicationContext(), "Invalid Username or Password", Toast.LENGTH_LONG).show();
-
             }
         } catch (JSONException jse) {
 
