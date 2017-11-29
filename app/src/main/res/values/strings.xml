@@ -9,8 +9,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Notices">Notices</string>
     <string name="important_links">Important Links</string>
-    <string name="username">Username</string>
-    <string name="password">Password</string>
+    <string name="username">Enter Email Address</string>
+    <string name="password">Enter Password</string>
     <string name="machine">Machine Number</string>
 
     <string name="aim">Aim</string>

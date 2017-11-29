@@ -17,7 +17,6 @@ import android.widget.LinearLayout;
 
 import com.jknccdirectorate.R;
 
-import static com.jknccdirectorate.R.id.machineWrapper;
 
 /**
  * Created by hp on 11-09-2017.
@@ -53,8 +52,8 @@ public class LoginFragment extends DialogFragment {
         //setStyle(DialogFragment.STYLE_NORMAL, android.R.style.Theme_Holo_Dialog_NoActionBar);
         user = (TextInputLayout) view.findViewById(R.id.usernameWrapper);
         password = (TextInputLayout) view.findViewById(R.id.passwordWrapper);
-        machine = (TextInputLayout) view.findViewById(machineWrapper);
-        submit = (Button) view.findViewById(R.id.btn_submit);
+        //machine = (TextInputLayout) view.findViewById(machineWrapper);
+        //submit = (Button) view.findViewById(R.id.btn_submit);
         //cancel = (Button) view.findViewById(R.id.btn_cancel);
 
         /*String username = user.getEditText().getText().toString();

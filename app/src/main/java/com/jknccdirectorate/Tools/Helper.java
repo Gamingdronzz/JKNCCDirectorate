@@ -27,7 +27,7 @@ public class Helper {
     public String FAILED = "failed";
     public String SUCCESS = "success";
     final String TAG = "Helper";
-    public String baseURL = "http://www.jknccdirectorate.com/api/";
+    public String baseURL = "http://www.jknccdirectorate.com/";
     private Context context;
 
     public Helper(Context context) {

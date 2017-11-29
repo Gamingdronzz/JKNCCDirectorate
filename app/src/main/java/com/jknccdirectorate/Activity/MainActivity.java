@@ -1,5 +1,6 @@
 package com.jknccdirectorate.Activity;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
@@ -13,19 +14,29 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.InputType;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.EditText;
 import android.widget.ExpandableListView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.NetworkError;
+import com.android.volley.NoConnectionError;
+import com.android.volley.ParseError;
+import com.android.volley.ServerError;
+import com.android.volley.TimeoutError;
+import com.android.volley.VolleyError;
 import com.jknccdirectorate.Adapter.ExpandableListAdapter;
 import com.jknccdirectorate.Fragment.AdgCornerFragment;
 import com.jknccdirectorate.Fragment.AimFragment;
@@ -42,16 +53,24 @@ import com.jknccdirectorate.Fragment.RtiFragment;
 import com.jknccdirectorate.Fragment.SongFragment;
 import com.jknccdirectorate.Model.ExpandedMenuModel;
 import com.jknccdirectorate.R;
+import com.jknccdirectorate.Tools.Helper;
+import com.jknccdirectorate.Tools.VolleyHelper;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements VolleyHelper.VolleyResponse {
 
     ExpandableListAdapter mMenuAdapter;
     ExpandableListView expandableList;
     WebView webView;
+    Helper helper;
+    VolleyHelper volleyHelper;
     List<ExpandedMenuModel> listDataHeader;
     HashMap<ExpandedMenuModel, List<String>> listDataChild;
     DrawerLayout drawer;
@@ -71,7 +90,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        helper = new Helper(this);
+        volleyHelper = new VolleyHelper(this,this);
         findviews();
         setupWebview();
 
@@ -273,8 +293,9 @@ public class MainActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogFragment newFragment = new LoginFragment();
-                newFragment.show(getSupportFragmentManager(), "LOG_IN");
+                //DialogFragment newFragment = new LoginFragment();
+                //newFragment.show(getSupportFragmentManager(), "LOG_IN");
+                showLoginDialog();
             }
         });
 
@@ -286,6 +307,37 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         selectHome();
+    }
+
+    private void showLoginDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        LayoutInflater inflater = getLayoutInflater();
+
+        View dialog_layout = inflater.inflate(R.layout.dialog_login, null);
+        final EditText editTextUsername = (EditText) dialog_layout.findViewById(R.id.username);
+        final EditText editTextPassword = (EditText) dialog_layout.findViewById(R.id.password);
+        builder.setView(dialog_layout)
+
+                .setPositiveButton("LogIn", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                        String username = editTextUsername.getText().toString();
+                        String password = editTextPassword.getText().toString();
+
+                        requestLogin(username,password);
+
+                    }
+                })
+                .setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     private void findviews() {
@@ -443,8 +495,55 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void requestLogin(String username,String password) {
+        Map<String, String> params = new HashMap<>();
+        params.put("Username", username);
+        params.put("Password", password);
+        volleyHelper.makeStringRequest(helper.getBaseURL() + "functions/android-loginuser.php", "tag", params);
+    }
+
     public void setActionBarTitle(String title) {
         getSupportActionBar().setTitle(title);
+    }
+
+    @Override
+    public void onError(VolleyError error) {
+        if (error instanceof TimeoutError) {
+
+            Log.e("Volley", "TimeoutError");
+        } else if (error instanceof NoConnectionError) {
+
+            Log.e("Volley", "NoConnectionError");
+        } else if (error instanceof AuthFailureError) {
+
+        } else if (error instanceof ServerError) {
+
+        } else if (error instanceof NetworkError) {
+
+        } else if (error instanceof ParseError) {
+            Log.e("Volley", "ParseError");
+        }
+    }
+
+    @Override
+    public void onResponse(String str) {
+        Log.v("Volley","Result = " + str.toString());
+
+            JSONObject jsonObject = helper.getJson(str);
+
+
+        try {
+            if (jsonObject.get("result").equals("1")) {
+                Toast.makeText(getApplicationContext(),"Succesfully Logged In",Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(getApplicationContext(),"Invalid Username or Password",Toast.LENGTH_LONG).show();
+
+            }
+        } catch (JSONException jse) {
+
+        }
+
+
     }
   /*  private void setupDrawerContent(NavigationView navigationView) {
         navigationView.setNavigationItemSelectedListener(
