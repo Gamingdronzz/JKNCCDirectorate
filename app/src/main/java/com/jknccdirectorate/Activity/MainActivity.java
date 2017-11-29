@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
@@ -16,7 +15,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,7 +25,6 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.ExpandableListView;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -46,7 +43,6 @@ import com.jknccdirectorate.Fragment.DisclaimerFragment;
 import com.jknccdirectorate.Fragment.DownloadsFragment;
 import com.jknccdirectorate.Fragment.JammuFragment;
 import com.jknccdirectorate.Fragment.KashmirFragment;
-import com.jknccdirectorate.Fragment.LoginFragment;
 import com.jknccdirectorate.Fragment.PledgeFragment;
 import com.jknccdirectorate.Fragment.RdcFragment;
 import com.jknccdirectorate.Fragment.RtiFragment;
@@ -75,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements VolleyHelper.Voll
     HashMap<ExpandedMenuModel, List<String>> listDataChild;
     DrawerLayout drawer;
     Toolbar toolbar;
+    String menu[] = null;
     private FloatingActionButton login, register;
     final String TAG = "Main";
 
@@ -91,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements VolleyHelper.Voll
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         helper = new Helper(this);
-        volleyHelper = new VolleyHelper(this,this);
+        volleyHelper = new VolleyHelper(this, this);
         findviews();
         setupWebview();
 
@@ -325,7 +322,7 @@ public class MainActivity extends AppCompatActivity implements VolleyHelper.Voll
                         String username = editTextUsername.getText().toString();
                         String password = editTextPassword.getText().toString();
 
-                        requestLogin(username,password);
+                        requestLogin(username, password);
 
                     }
                 })
@@ -433,10 +430,10 @@ public class MainActivity extends AppCompatActivity implements VolleyHelper.Voll
     private void prepareListData() {
         listDataHeader = new ArrayList<ExpandedMenuModel>();
         listDataChild = new HashMap<ExpandedMenuModel, List<String>>();
-        String menu[] = getResources().getStringArray(R.array.menu);
+        menu = getResources().getStringArray(R.array.menu);
 
         //heading data
-        for (int i = 0; i < menu.length; i++) {
+        for (int i = 0; i < menu.length - 1; i++) {
             ExpandedMenuModel item = new ExpandedMenuModel();
             item.setName(menu[i]);
             listDataHeader.add(item);
@@ -451,20 +448,8 @@ public class MainActivity extends AppCompatActivity implements VolleyHelper.Voll
         org.add(getResources().getString(R.string.jammu));
         org.add(getResources().getString(R.string.kashmir));
 
-        List<String> admin = new ArrayList<>();
-        admin.add(getResources().getString(R.string.enrollment));
-        admin.add(getResources().getString(R.string.add_event));
-        admin.add(getResources().getString(R.string.add_gallery));
-        admin.add(getResources().getString(R.string.add_notification));
-        admin.add(getResources().getString(R.string.update));
-        admin.add(getResources().getString(R.string.training));
-        admin.add(getResources().getString(R.string.social));
-        admin.add(getResources().getString(R.string.report));
-        admin.add(getResources().getString(R.string.report_training));
-
         listDataChild.put(listDataHeader.get(2), about);// Header, Child data
         listDataChild.put(listDataHeader.get(3), org);
-        listDataChild.put(listDataHeader.get(13), admin);
 
     }
 
@@ -495,7 +480,7 @@ public class MainActivity extends AppCompatActivity implements VolleyHelper.Voll
         }
     }
 
-    private void requestLogin(String username,String password) {
+    private void requestLogin(String username, String password) {
         Map<String, String> params = new HashMap<>();
         params.put("Username", username);
         params.put("Password", password);
@@ -527,16 +512,18 @@ public class MainActivity extends AppCompatActivity implements VolleyHelper.Voll
 
     @Override
     public void onResponse(String str) {
-        Log.v("Volley","Result = " + str.toString());
+        Log.v("Volley", "Result = " + str.toString());
 
-            JSONObject jsonObject = helper.getJson(str);
+        JSONObject jsonObject = helper.getJson(str);
 
 
         try {
             if (jsonObject.get("result").equals("1")) {
-                Toast.makeText(getApplicationContext(),"Succesfully Logged In",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Succesfully Logged In", Toast.LENGTH_LONG).show();
+                login.setVisibility(View.GONE);
+                showStaffLinks();
             } else {
-                Toast.makeText(getApplicationContext(),"Invalid Username or Password",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Invalid Username or Password", Toast.LENGTH_LONG).show();
 
             }
         } catch (JSONException jse) {
@@ -544,6 +531,28 @@ public class MainActivity extends AppCompatActivity implements VolleyHelper.Voll
         }
 
 
+    }
+
+    private void showStaffLinks() {
+        ExpandedMenuModel item = new ExpandedMenuModel();
+        item.setName(menu[menu.length-1]);
+        listDataHeader.add(item);
+
+        List<String> admin = new ArrayList<>();
+        admin.add(getResources().getString(R.string.enrollment));
+        admin.add(getResources().getString(R.string.add_event));
+        admin.add(getResources().getString(R.string.add_gallery));
+        admin.add(getResources().getString(R.string.add_notification));
+        admin.add(getResources().getString(R.string.update));
+        admin.add(getResources().getString(R.string.training));
+        admin.add(getResources().getString(R.string.social));
+        admin.add(getResources().getString(R.string.report));
+        admin.add(getResources().getString(R.string.report_training));
+
+        listDataChild.put(listDataHeader.get(13), admin);
+
+        mMenuAdapter = new ExpandableListAdapter(MainActivity.this, listDataHeader, listDataChild, expandableList);
+        expandableList.setAdapter(mMenuAdapter);
     }
   /*  private void setupDrawerContent(NavigationView navigationView) {
         navigationView.setNavigationItemSelectedListener(
