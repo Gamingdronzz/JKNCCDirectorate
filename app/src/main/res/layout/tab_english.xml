@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/colorWhite"
-            android:fontFamily="cursive"
+            android:fontFamily="serif"
             android:padding="@dimen/activity_vertical_margin"
             android:text="@string/song_content_english"
             android:textColor="@color/colorBlack"
