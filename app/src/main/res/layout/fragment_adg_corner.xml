@@ -1,4 +1,4 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,45 +10,48 @@
         android:background="@drawable/back"
         android:orientation="vertical">
 
-        <LinearLayout
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/padding_medium"
+            android:src="@drawable/adg" />
+
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:background="@color/colorAccent"
+            android:gravity="center_horizontal|center_vertical"
+            android:padding="@dimen/padding_medium"
+            android:text="MESSAGE OF MAJ GEN NILENDRA KUMAR, ADG NCC J&amp;K"
+            android:textAlignment="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_15"
+            android:textStyle="bold"
+            android:typeface="serif" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:padding="@dimen/padding_medium"
-                android:src="@drawable/adg" />
-
-
-            <TextView
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.uncopt.android.widget.text.justify.JustifiedTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:background="@color/colorAccent"
-                android:gravity="center_horizontal|center_vertical"
-                android:padding="@dimen/padding_medium"
-                android:text="MESSAGE OF MAJ GEN NILENDRA KUMAR, ADG NCC J&amp;K"
-                android:textAlignment="center"
-                android:textColor="@color/colorWhite"
-                android:textSize="@dimen/text_15"
-                android:textStyle="bold"
-                android:typeface="serif" />
-        </LinearLayout>
+                android:background="@color/colorWhite"
+                android:fontFamily="serif"
+                android:padding="@dimen/padding_large"
+                android:text="@string/adg_content"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_15" />
 
-        <com.uncopt.android.widget.text.justify.JustifiedTextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:background="@color/colorWhite"
-            android:fontFamily="serif"
-            android:padding="@dimen/padding_large"
-            android:text="@string/adg_content"
-            android:textColor="@color/colorBlack"
-            android:textSize="@dimen/text_15" />
+        </ScrollView>
+
+
     </LinearLayout>
-</ScrollView>
+
+
+</LinearLayout>
