@@ -8,6 +8,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import com.jknccdirectorate.Activity.MainActivity;
@@ -18,7 +20,8 @@ import com.jknccdirectorate.R;
  */
 public class DisclaimerFragment extends Fragment {
 
-private TextView GamingDronzz;
+    private TextView GamingDronzz, textView;
+
     public DisclaimerFragment() {
         // Required empty public constructor
     }
@@ -30,13 +33,45 @@ private TextView GamingDronzz;
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_disclaimer, container, false);
         GamingDronzz = (TextView) view.findViewById(R.id.disclaimerDesignedBy);
+        textView = (TextView) view.findViewById(R.id.disclaimer);
+        GamingDronzz.setVisibility(View.INVISIBLE);
         GamingDronzz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openCompanyWebsite();
             }
         });
+        StartAnimations();
         return view;
+    }
+
+    private void StartAnimations() {
+        Animation animation1 = AnimationUtils.loadAnimation(getContext(), R.anim.fade);
+        final Animation animation2 = AnimationUtils.loadAnimation(getContext(), R.anim.translate);
+
+        animation1.reset();
+        animation2.reset();
+        textView.clearAnimation();
+        GamingDronzz.clearAnimation();
+
+        textView.startAnimation(animation1);
+        animation1.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                GamingDronzz.setVisibility(View.VISIBLE);
+                GamingDronzz.startAnimation(animation2);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
     }
 
     private void openCompanyWebsite() {
@@ -44,6 +79,7 @@ private TextView GamingDronzz;
         browserIntent.setData(Uri.parse("http://www.gamingdronzz.com"));
         startActivity(browserIntent);
     }
+
     @Override
     public void onResume() {
         super.onResume();

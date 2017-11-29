@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorOffWhite"
+    android:background="@drawable/back"
     android:orientation="vertical"
     tools:context="com.jknccdirectorate.Fragment.DisclaimerFragment">
 
@@ -11,9 +11,14 @@
         android:layout_height="wrap_content">
 
         <com.uncopt.android.widget.text.justify.JustifiedTextView
+            android:id="@+id/disclaimer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:background="@color/colorWhite"
+            android:fontFamily="serif"
             android:padding="@dimen/activity_vertical_margin"
             android:text="@string/disclaimer_content"
             android:textColor="@color/colorBlack"

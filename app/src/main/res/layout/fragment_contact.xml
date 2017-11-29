@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorOffWhite"
+    android:background="@drawable/back"
     tools:context="com.jknccdirectorate.Fragment.ContactFragment">
 
     <LinearLayout
@@ -13,17 +13,22 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/contact_us_location"
+            android:layout_marginTop="@dimen/margin_large"
+            android:background="@color/colorAccent"
             android:gravity="center_horizontal"
-            android:textStyle="bold"
-            android:layout_margin="@dimen/margin_medium"/>
+            android:paddingBottom="@dimen/margin_medium"
+            android:paddingTop="@dimen/margin_medium"
+            android:text="@string/contact_us_location"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_20"
+            android:textStyle="bold" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/locations"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingTop="@dimen/padding_medium"
-            android:paddingBottom="@dimen/padding_medium">
+            android:paddingBottom="@dimen/padding_medium"
+            android:paddingTop="@dimen/padding_medium">
 
         </android.support.v7.widget.RecyclerView>
 
