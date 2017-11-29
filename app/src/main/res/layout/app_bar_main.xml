@@ -22,7 +22,7 @@
 
     <include layout="@layout/content_main" />
 
-   <!-- <LinearLayout
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
@@ -42,5 +42,5 @@
             android:layout_marginTop="@dimen/margin_large"
             app:srcCompat="@drawable/login" />
 
-    </LinearLayout>-->
+    </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

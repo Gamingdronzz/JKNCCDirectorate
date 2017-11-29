@@ -1,11 +1,13 @@
 package com.jknccdirectorate.Activity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
@@ -33,6 +35,7 @@ import com.jknccdirectorate.Fragment.DisclaimerFragment;
 import com.jknccdirectorate.Fragment.DownloadsFragment;
 import com.jknccdirectorate.Fragment.JammuFragment;
 import com.jknccdirectorate.Fragment.KashmirFragment;
+import com.jknccdirectorate.Fragment.LoginFragment;
 import com.jknccdirectorate.Fragment.PledgeFragment;
 import com.jknccdirectorate.Fragment.RdcFragment;
 import com.jknccdirectorate.Fragment.RtiFragment;
@@ -186,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
                     case 0:
                         //fragment = new HomeFragment();
                         getSupportFragmentManager().popBackStack();
-                        Toast.makeText(MainActivity.this,"Not Available",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Not Available", Toast.LENGTH_SHORT).show();
                         // webView.loadUrl("http://jknccdirectorate.com/index.php");
                         drawer.closeDrawer(GravityCompat.START);
                         break;
@@ -267,7 +270,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /*login.setOnClickListener(new View.OnClickListener() {
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DialogFragment newFragment = new LoginFragment();
@@ -282,7 +285,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-*/
         selectHome();
     }
 
@@ -292,8 +294,8 @@ public class MainActivity extends AppCompatActivity {
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         expandableList = (ExpandableListView) findViewById(R.id.navigationmenu);
-        // login = (FloatingActionButton) findViewById(R.id.btn_login);
-        //register = (FloatingActionButton) findViewById(R.id.btn_register);
+        login = (FloatingActionButton) findViewById(R.id.btn_login);
+        register = (FloatingActionButton) findViewById(R.id.btn_register);
         webView = (WebView) findViewById(R.id.webView);
     }
 
