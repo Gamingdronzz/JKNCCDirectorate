@@ -479,7 +479,6 @@ public class MainActivity extends AppCompatActivity implements VolleyHelper.Voll
     }
 
     private void requestLogin(String username, String password) {
-        showStaffLinks();
         Map<String, String> params = new HashMap<>();
         params.put("Username", username);
         params.put("Password", password);

@@ -27,7 +27,7 @@ public class EventsActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("EVENT");
 
         findviews();
-        adapter = new ComplexRecyclerViewAdapter(getSampleArrayList(),null,null);
+        adapter = new ComplexRecyclerViewAdapter(getSampleArrayList(),null,this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
     }

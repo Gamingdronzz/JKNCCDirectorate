@@ -22,7 +22,7 @@ public class AddNotificationActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("NOTIFICATION");
 
         findviews();
-        adapter = new ComplexRecyclerViewAdapter(getSampleArrayList(), null, null);
+        adapter = new ComplexRecyclerViewAdapter(getSampleArrayList(), null, this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
     }

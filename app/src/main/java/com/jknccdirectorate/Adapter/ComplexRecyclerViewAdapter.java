@@ -1,10 +1,12 @@
 package com.jknccdirectorate.Adapter;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,15 +27,19 @@ import com.jknccdirectorate.ViewHolders.ViewHolderSpace;
 
 import java.util.ArrayList;
 
+import static android.app.Activity.RESULT_OK;
+
 /**
  * Created by hp on 11-09-2017.
  */
 
 public class ComplexRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
+    private static final int FILE_SELECT_CODE = 1;
     private ArrayList<Object> items;
     FragmentManager fragmentManager;
     Fragment context;
+    Activity context1;
 
     private final int
             HEADING = 0,
@@ -51,6 +57,12 @@ public class ComplexRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
         this.items = items;
         this.fragmentManager = manager;
         this.context = context;
+    }
+
+    public ComplexRecyclerViewAdapter(ArrayList<Object> items, FragmentManager manager, Activity context) {
+        this.items = items;
+        this.fragmentManager = manager;
+        this.context1 = context;
     }
 
     @Override
@@ -103,7 +115,7 @@ public class ComplexRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
                 break;
             case FILE:
                 View fileView = inflater.inflate(R.layout.view_holder_file, parent, false);
-                viewHolder = new ViewHolderFile(fileView);
+                viewHolder = new ViewHolderFile(fileView, new CustomFileChooser());
                 break;
         }
         return viewHolder;
@@ -131,16 +143,18 @@ public class ComplexRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
                 break;
             case FILE:
                 ViewHolderFile viewHolderFile = (ViewHolderFile) holder;
-                configureViewHolderFile(viewHolderFile,position);
+                configureViewHolderFile(viewHolderFile, position);
                 break;
             default:
                 break;
 
         }
     }
+
     private void configureViewHolderFile(ViewHolderFile viewHolderFile, int position) {
         FileModel file = (FileModel) items.get(position);
         if (file != null) {
+            viewHolderFile.customFileChooser.updatePosition(position);
             viewHolderFile.setTitle(file.getTitle());
         }
     }
@@ -197,6 +211,30 @@ public class ComplexRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
 
     }
 
+    public class CustomFileChooser implements View.OnClickListener {
+        private int position;
+        private boolean clicked = false;
+
+        public void updatePosition(int position) {
+            this.position = position;
+        }
+
+
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+            intent.setType("*/*");
+            intent.addCategory(Intent.CATEGORY_OPENABLE);
+
+            try {
+                context1.startActivityForResult(Intent.createChooser(intent, "Select a File to Upload"), FILE_SELECT_CODE);
+            } catch (android.content.ActivityNotFoundException ex) {
+            }
+        }
+
+
+    }
+
     public class ViewHolderDownloadItem extends RecyclerView.ViewHolder {
 
         private TextView textView;
@@ -215,4 +253,15 @@ public class ComplexRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
         }
     }
 
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case FILE_SELECT_CODE:
+                if (resultCode == RESULT_OK) {
+                    // Get the Uri of the selected file
+                    Uri uri = data.getData();
+                    Log.d("Adapter", "File Uri: " + uri.toString());
+                }
+                break;
+        }
+    }
 }
