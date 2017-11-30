@@ -9,7 +9,6 @@ import android.graphics.Bitmap;
 public class ImageModel {
     private Bitmap bitmap;
 
-
     public Bitmap getBitmap() {
         return bitmap;
     }
@@ -22,4 +21,5 @@ public class ImageModel {
 
         this.bitmap = bitmap;
     }
+
 }

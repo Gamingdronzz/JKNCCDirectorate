@@ -107,6 +107,7 @@ public class MainActivity extends AppCompatActivity implements VolleyHelper.Voll
         expandableList.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
+                Intent intent;
                 Fragment fragment = null;
                 getSupportFragmentManager().popBackStack();
                 switch (i) {
@@ -146,18 +147,16 @@ public class MainActivity extends AppCompatActivity implements VolleyHelper.Voll
                                 Toast.makeText(MainActivity.this, "Enrollment Under Construction..", Toast.LENGTH_SHORT).show();
                                 break;
                             case 1:
-                                Intent intent = new Intent(MainActivity.this, EventsActivity.class);
+                                intent = new Intent(MainActivity.this, EventsActivity.class);
                                 startActivity(intent);
                                 break;
                             case 2:
-                                //fragment = new VerifyUserFragment();
                                 Toast.makeText(MainActivity.this, "Gallery Under Construction..", Toast.LENGTH_SHORT).show();
                                 //webView.loadUrl("http://jknccdirectorate.com/AddGallery.php");
                                 break;
                             case 3:
-                                //fragment = new ReportsFragment();
-                                Toast.makeText(MainActivity.this, "Notices Under Construction..", Toast.LENGTH_SHORT).show();
-                                //webView.loadUrl("http://jknccdirectorate.com/addNotification.php");
+                                intent = new Intent(MainActivity.this, AddNotificationActivity.class);
+                                startActivity(intent);
                                 break;
                             case 4:
                                 //fragment = new ReportsFragment();

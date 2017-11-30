@@ -14,11 +14,13 @@ import com.jknccdirectorate.Model.DownloadHeadingModel;
 import com.jknccdirectorate.Model.DownloadItemModel;
 import com.jknccdirectorate.Model.DropdownModel;
 import com.jknccdirectorate.Model.EditTextModel;
+import com.jknccdirectorate.Model.FileModel;
 import com.jknccdirectorate.Model.SpaceModel;
 import com.jknccdirectorate.R;
 import com.jknccdirectorate.ViewHolders.ViewHolderDownloadHeading;
 import com.jknccdirectorate.ViewHolders.ViewHolderDropdown;
 import com.jknccdirectorate.ViewHolders.ViewHolderEditText;
+import com.jknccdirectorate.ViewHolders.ViewHolderFile;
 import com.jknccdirectorate.ViewHolders.ViewHolderSpace;
 
 import java.util.ArrayList;
@@ -42,7 +44,8 @@ public class ComplexRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
             DIVIDER = 5,
             SPACE = 6,
             DATE = 7,
-            IMAGE = 8;
+            IMAGE = 8,
+            FILE = 9;
 
     public ComplexRecyclerViewAdapter(ArrayList<Object> items, FragmentManager manager, Fragment context) {
         this.items = items;
@@ -62,6 +65,8 @@ public class ComplexRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
             return DOWNLOADITEM;
         else if (items.get(position) instanceof SpaceModel)
             return SPACE;
+        else if (items.get(position) instanceof FileModel)
+            return FILE;
         else
             return -1;
     }
@@ -96,6 +101,10 @@ public class ComplexRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
                 View SpaceView = inflater.inflate(R.layout.view_holder_space, parent, false);
                 viewHolder = new ViewHolderSpace(SpaceView);
                 break;
+            case FILE:
+                View fileView = inflater.inflate(R.layout.view_holder_file, parent, false);
+                viewHolder = new ViewHolderFile(fileView);
+                break;
         }
         return viewHolder;
 
@@ -120,10 +129,20 @@ public class ComplexRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
                 ViewHolderDownloadItem viewHolderDownloadItem = (ViewHolderDownloadItem) holder;
                 configureViewHolderDownloadItem(viewHolderDownloadItem, position);
                 break;
+            case FILE:
+                ViewHolderFile viewHolderFile = (ViewHolderFile) holder;
+                configureViewHolderFile(viewHolderFile,position);
+                break;
             default:
                 break;
-        }
 
+        }
+    }
+    private void configureViewHolderFile(ViewHolderFile viewHolderFile, int position) {
+        FileModel file = (FileModel) items.get(position);
+        if (file != null) {
+            viewHolderFile.setTitle(file.getTitle());
+        }
     }
 
     private void configureViewHolderDropDown(ViewHolderDropdown vh2, int position) {
