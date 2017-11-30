@@ -3,7 +3,7 @@
     android:id="@+id/llContainer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/margin_small">
+    android:layout_marginTop="@dimen/margin_large">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,10 +14,11 @@
             android:id="@+id/text_view_dropdown_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:textStyle="bold"
             android:padding="@dimen/padding_medium"
-            android:textColor="@color/colorBlack"
-            android:textSize="@dimen/text_15"
-            android:textStyle="bold">
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_15">
 
         </TextView>
 

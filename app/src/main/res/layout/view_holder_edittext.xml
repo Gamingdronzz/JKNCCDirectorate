@@ -2,8 +2,8 @@
     android:id="@+id/llContainer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:elevation="@dimen/elevation_medium"
-    android:layout_marginBottom="@dimen/margin_small">
+    android:layout_marginTop="@dimen/margin_large"
+    android:elevation="@dimen/elevation_medium">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,11 +13,13 @@
         <TextView
             android:id="@+id/text_view_edit_text"
             android:layout_width="match_parent"
-            android:padding="@dimen/padding_medium"
             android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:padding="@dimen/padding_medium"
+            android:text="ddhb"
+            android:textColor="@color/colorAccent"
             android:textStyle="bold"
-            android:textSize="@dimen/text_15"
-            android:textColor="@color/colorBlack" />
+            android:textSize="@dimen/text_15" />
 
         <EditText
             android:id="@+id/edit_text"
