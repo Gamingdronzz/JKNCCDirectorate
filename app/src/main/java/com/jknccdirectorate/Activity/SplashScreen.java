@@ -2,7 +2,6 @@ package com.jknccdirectorate.Activity;
 
 import android.content.Intent;
 import android.graphics.PixelFormat;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -30,13 +29,13 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        textViewConceptBy = (TextView) findViewById(R.id.conceptBy);
+        //textViewConceptBy = (TextView) findViewById(R.id.conceptBy);
         textViewDesignedBy = (TextView) findViewById(R.id.designedBy);
         textViewDesignedBy.setVisibility(View.INVISIBLE);
-        textViewConceptBy.setVisibility(View.INVISIBLE);
+        //textViewConceptBy.setVisibility(View.INVISIBLE);
 
         StartAnimations();
-        //nextActivity();
+        //showNextActivity();
     }
 
 
@@ -51,7 +50,7 @@ public class SplashScreen extends AppCompatActivity {
         animationTranslate.reset();
 
         textViewDesignedBy.clearAnimation();
-        textViewConceptBy.clearAnimation();
+        //textViewConceptBy.clearAnimation();
 
         LinearLayout layout = (LinearLayout) findViewById(R.id.layout);
         layout.clearAnimation();
@@ -66,8 +65,10 @@ public class SplashScreen extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                textViewConceptBy.setVisibility(View.VISIBLE);
-                textViewConceptBy.startAnimation(animScale);
+                //textViewConceptBy.setVisibility(View.VISIBLE);
+                //textViewConceptBy.startAnimation(animScale);
+                textViewDesignedBy.setVisibility(View.VISIBLE);
+                textViewDesignedBy.startAnimation(animationTranslate);
 
             }
 
@@ -102,7 +103,7 @@ public class SplashScreen extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                nextActivity();
+                showNextActivity();
             }
 
             @Override
@@ -113,24 +114,10 @@ public class SplashScreen extends AppCompatActivity {
 
     }
 
-    private void nextActivity() {
+    private void showNextActivity() {
         intent = new Intent(SplashScreen.this, MainActivity.class);
         startActivity(intent);
         finish();
-        /*Thread thread = new Thread() {
-            public void run() {
-                super.run();
-                try {
-                    Thread.sleep(5000);
-                } catch (Exception e1) {
-                    e1.printStackTrace();
-                } finally {
-
-                }
-            }
-        };
-        thread.start();
-        */
     }
 
     @Override

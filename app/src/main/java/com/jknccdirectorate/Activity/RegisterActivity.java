@@ -16,7 +16,12 @@ public class RegisterActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     ComplexRecyclerViewAdapter adapter;
-    String[] cadreList = {"abc", "xyz", "pqr"};
+    String[] cadreList = {"Choose Cadre", "Army", "GCI","ANO","Civilian","Cadet"};
+    String[] levelList = {"Choose Level", "DTE", "GP","Unit","Institute"};
+    String[] monthlyIncomeList = {"Choose Monthly Income", "Less Than 5000"};
+    String[] designationList = {"Choose Designation"};
+    String[] categoryList = {"Choose Category"};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,19 +44,19 @@ public class RegisterActivity extends AppCompatActivity {
 
         ArrayList<Object> items = new ArrayList<>();
 
-        items.add(new EditTextModel("Name"));
+        items.add(new EditTextModel("Name",R.drawable.ic_action_person));
         items.add(new DropdownModel("Cadre", cadreList));
-        items.add(new DropdownModel("Level", cadreList));
-        items.add(new DropdownModel("Designation", cadreList));
-        items.add(new EditTextModel("Father Name"));
-        items.add(new EditTextModel("Address"));
-        items.add(new EditTextModel("Service Number"));
-        items.add(new EditTextModel("E-Mail"));
-        items.add(new EditTextModel("Mobile Number"));
-        items.add(new EditTextModel("Machine Number"));
-        items.add(new DropdownModel("Monthly Income from all sources", cadreList));
-        items.add(new DropdownModel("Category", cadreList));
-        items.add(new DropdownModel("Category", cadreList));
+        items.add(new DropdownModel("Level", levelList));
+        items.add(new DropdownModel("Designation", designationList));
+        items.add(new EditTextModel("Father Name",R.drawable.ic_action_person));
+        items.add(new EditTextModel("Address",R.drawable.ic_action_address));
+        items.add(new EditTextModel("Service Number",R.drawable.ic_action_settings));
+        items.add(new EditTextModel("E-Mail",R.drawable.ic_action_email));
+        items.add(new EditTextModel("Mobile Number",R.drawable.ic_action_contact));
+        items.add(new EditTextModel("Machine Number",R.drawable.ic_action_machine));
+        items.add(new DropdownModel("Monthly Income from all sources", monthlyIncomeList));
+        items.add(new DropdownModel("Category", categoryList));
+        items.add(new DropdownModel("Category", categoryList));
         return items;
     }
 }

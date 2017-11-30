@@ -161,7 +161,7 @@ public class ComplexRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
     private void configureViewHolderDropDown(ViewHolderDropdown vh2, int position) {
         DropdownModel dropDown = (DropdownModel) items.get(position);
         if (dropDown != null) {
-            vh2.setTitle(dropDown.getHeading());
+            //vh2.setTitle(dropDown.getHeading());
             vh2.setDropdownlist(dropDown.getList());
         }
     }
@@ -170,6 +170,7 @@ public class ComplexRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
         EditTextModel simpleEditText = (EditTextModel) items.get(position);
         if (simpleEditText != null) {
             vh1.setTitle(simpleEditText.getTitle());
+            vh1.setIcon(simpleEditText.getIcon());
             //vh1.setHint("Enter " + simpleEditText.getTitle());
             vh1.setTag(simpleEditText.getTitle());
         }

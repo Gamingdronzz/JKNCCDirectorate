@@ -6,7 +6,21 @@ package com.jknccdirectorate.Model;
 
 public class EditTextModel {
     private String title;
+    private int icon;
 
+    public EditTextModel(String title, int icon) {
+        this.title = title;
+        this.icon = icon;
+    }
+
+    public int getIcon() {
+
+        return icon;
+    }
+
+    public void setIcon(int icon) {
+        this.icon = icon;
+    }
 
     public EditTextModel(String title) {
         this.title = title;

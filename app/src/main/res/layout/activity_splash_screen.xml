@@ -45,6 +45,7 @@
         android:textAlignment="center"
         android:textColor="@color/colorRed" />
 
+    <!--
     <TextView
         android:id="@+id/conceptBy"
         android:layout_width="match_parent"
@@ -56,5 +57,5 @@
         android:textAlignment="center"
         android:textColor="@color/colorDarkBlue"
         android:textSize="@dimen/text_15" />
-
+-->
 </RelativeLayout>
