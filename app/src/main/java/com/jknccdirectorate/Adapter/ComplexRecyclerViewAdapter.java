@@ -6,7 +6,6 @@ import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -171,7 +170,7 @@ public class ComplexRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
         EditTextModel simpleEditText = (EditTextModel) items.get(position);
         if (simpleEditText != null) {
             vh1.setTitle(simpleEditText.getTitle());
-            vh1.setHint("Enter " + simpleEditText.getTitle());
+            //vh1.setHint("Enter " + simpleEditText.getTitle());
             vh1.setTag(simpleEditText.getTitle());
         }
     }
@@ -257,9 +256,6 @@ public class ComplexRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
         switch (requestCode) {
             case FILE_SELECT_CODE:
                 if (resultCode == RESULT_OK) {
-                    // Get the Uri of the selected file
-                    Uri uri = data.getData();
-                    Log.d("Adapter", "File Uri: " + uri.toString());
                 }
                 break;
         }

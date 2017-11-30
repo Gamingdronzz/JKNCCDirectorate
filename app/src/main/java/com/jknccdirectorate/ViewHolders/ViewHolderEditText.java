@@ -1,9 +1,9 @@
 package com.jknccdirectorate.ViewHolders;
 
+import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import com.jknccdirectorate.R;
 
@@ -13,32 +13,29 @@ import com.jknccdirectorate.R;
 
 public class ViewHolderEditText extends RecyclerView.ViewHolder {
 
-    private EditText editText;
-    private TextView textview;
+    //private EditText editText;
+    private TextInputLayout textview;
+    private TextInputEditText editText;
 
     public ViewHolderEditText(View itemView) {
         super(itemView);
-        editText = (EditText) itemView.findViewById(R.id.edit_text);
-        textview = (TextView) itemView.findViewById(R.id.text_view_edit_text);
+        editText = (TextInputEditText) itemView.findViewById(R.id.editText);
+        textview = (TextInputLayout) itemView.findViewById(R.id.text_view_edit_text);
     }
 
     public void setTitle(String value) {
-        textview.setText(value);
+        textview.setHint(value);
     }
 
-   /* public String getTitle() {
-        return this.textview.getText().toString();
+    public String getTitle() {
+        return this.editText.getHint().toString();
     }
-    public String getValue() {
-        return this.editText.getText().toString();
-    }
-*/
-    public void setHint(String value) {
+    /*public void setHint(String value) {
         editText.setHint(value);
-    }
+    }*/
 
     public void setTag(String value) {
-        editText.setTag(value);
+        textview.setTag(value);
     }
 
 }
