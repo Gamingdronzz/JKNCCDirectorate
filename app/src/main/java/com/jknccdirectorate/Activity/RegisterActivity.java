@@ -52,12 +52,12 @@ public class RegisterActivity extends AppCompatActivity {
         items.add(new EditTextModel("E-Mail",R.drawable.ic_action_email));
         items.add(new EditTextModel("Mobile Number",R.drawable.ic_action_contact));
         items.add(new EditTextModel("Machine Number",R.drawable.ic_action_machine));
-        items.add(new DropdownModel("Monthly Income from all sources", monthlyIncomeList));
-        items.add(new DropdownModel("Cadre", cadreList));
-        items.add(new DropdownModel("Level", levelList));
-        items.add(new DropdownModel("Designation", designationList));
-        items.add(new DropdownModel("Category", categoryList));
-        items.add(new DropdownModel("Category", categoryList));
+        items.add(new DropdownModel("Monthly Income from all sources", monthlyIncomeList,R.drawable.ic_action_income));
+        items.add(new DropdownModel("Cadre", cadreList,R.drawable.ic_action_designation));
+        items.add(new DropdownModel("Level", levelList,R.drawable.ic_action_designation));
+        items.add(new DropdownModel("Designation", designationList,R.drawable.ic_action_designation));
+        items.add(new DropdownModel("Category", categoryList,R.drawable.ic_action_category));
+        items.add(new DropdownModel("Category", categoryList,R.drawable.ic_action_category));
         return items;
     }
 }

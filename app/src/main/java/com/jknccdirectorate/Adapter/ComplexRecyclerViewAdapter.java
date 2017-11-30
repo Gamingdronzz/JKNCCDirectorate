@@ -163,6 +163,7 @@ public class ComplexRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
         if (dropDown != null) {
             //vh2.setTitle(dropDown.getHeading());
             vh2.setDropdownlist(dropDown.getList());
+            vh2.setIcon(dropDown.getIcon());
         }
     }
 

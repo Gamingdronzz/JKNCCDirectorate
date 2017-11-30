@@ -7,6 +7,22 @@ package com.jknccdirectorate.Model;
 public class DropdownModel {
     private String heading;
     private String[] list;
+    private int icon;
+
+    public DropdownModel(String heading, String[] list, int icon) {
+        this.heading = heading;
+        this.list = list;
+        this.icon = icon;
+    }
+
+    public int getIcon() {
+
+        return icon;
+    }
+
+    public void setIcon(int icon) {
+        this.icon = icon;
+    }
     //private int selectedPosition = 0;
 
     public DropdownModel(String heading, String[] list) {

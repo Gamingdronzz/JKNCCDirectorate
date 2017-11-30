@@ -4,6 +4,7 @@ import android.support.v7.widget.AppCompatSpinner;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jknccdirectorate.R;
@@ -16,6 +17,7 @@ public class ViewHolderDropdown extends RecyclerView.ViewHolder {
     //private TextView textview;
     private AppCompatSpinner dropdownlist;
     ArrayAdapter<String> arrayAdapter;
+    private ImageView icon;
 
 
     public ViewHolderDropdown(View v) {
@@ -23,6 +25,7 @@ public class ViewHolderDropdown extends RecyclerView.ViewHolder {
         arrayAdapter = new ArrayAdapter<String>(v.getContext(), android.R.layout.simple_dropdown_item_1line);
         //textview = (TextView) v.findViewById(R.id.text_view_dropdown_title);
         dropdownlist = (AppCompatSpinner) v.findViewById(R.id.spinner_dropdown);
+        icon = (ImageView) v.findViewById(R.id.spinner_icon);
     }
 
     public void setTitle(String value) {
@@ -42,6 +45,11 @@ public class ViewHolderDropdown extends RecyclerView.ViewHolder {
 
     public void setSelectedItem(int selectedPosition) {
         this.dropdownlist.setSelection(selectedPosition);
+    }
+
+    public void setIcon(int resID)
+    {
+        icon.setImageResource(resID);
     }
 }
 
