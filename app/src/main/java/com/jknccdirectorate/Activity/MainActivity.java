@@ -146,9 +146,8 @@ public class MainActivity extends AppCompatActivity implements VolleyHelper.Voll
                                 Toast.makeText(MainActivity.this, "Enrollment Under Construction..", Toast.LENGTH_SHORT).show();
                                 break;
                             case 1:
-                                //fragment = new AdminEventsFragment();
-                                //webView.loadUrl("http://jknccdirectorate.com/eventadd.php");
-                                Toast.makeText(MainActivity.this, "Events Under Construction..", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(MainActivity.this, EventsActivity.class);
+                                startActivity(intent);
                                 break;
                             case 2:
                                 //fragment = new VerifyUserFragment();
@@ -481,6 +480,7 @@ public class MainActivity extends AppCompatActivity implements VolleyHelper.Voll
     }
 
     private void requestLogin(String username, String password) {
+        showStaffLinks();
         Map<String, String> params = new HashMap<>();
         params.put("Username", username);
         params.put("Password", password);
@@ -524,7 +524,7 @@ public class MainActivity extends AppCompatActivity implements VolleyHelper.Voll
                 //Role value for determining what type of user is logging in.
                 //There are 4 types viz: Cadet,Staff Member, ANO,Commander
                 int role = jsonObject.getInt("role");
-                if(role>=1) {
+                if (role >= 1) {
                     showStaffLinks();
                 }
 
@@ -540,7 +540,7 @@ public class MainActivity extends AppCompatActivity implements VolleyHelper.Voll
 
     private void showStaffLinks() {
         ExpandedMenuModel item = new ExpandedMenuModel();
-        item.setName(menu[menu.length-1]);
+        item.setName(menu[menu.length - 1]);
         listDataHeader.add(item);
 
         List<String> admin = new ArrayList<>();

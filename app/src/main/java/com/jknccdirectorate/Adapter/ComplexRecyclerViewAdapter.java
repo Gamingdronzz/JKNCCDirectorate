@@ -2,18 +2,18 @@ package com.jknccdirectorate.Adapter;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.Fragment;
 import android.widget.TextView;
 
+import com.jknccdirectorate.Model.DownloadHeadingModel;
 import com.jknccdirectorate.Model.DownloadItemModel;
 import com.jknccdirectorate.Model.DropdownModel;
 import com.jknccdirectorate.Model.EditTextModel;
-import com.jknccdirectorate.Model.DownloadHeadingModel;
 import com.jknccdirectorate.Model.SpaceModel;
 import com.jknccdirectorate.R;
 import com.jknccdirectorate.ViewHolders.ViewHolderDownloadHeading;
@@ -32,6 +32,7 @@ public class ComplexRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
     private ArrayList<Object> items;
     FragmentManager fragmentManager;
     Fragment context;
+
     private final int
             HEADING = 0,
             SIMPLEEDITTEXT = 1,
@@ -89,7 +90,7 @@ public class ComplexRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
                 break;
             case DOWNLOADITEM:
                 View downloadItemView = inflater.inflate(R.layout.view_holder_download_item, parent, false);
-                viewHolder = new ViewHolderDownloadItem(downloadItemView,new CustomOnClickListener());
+                viewHolder = new ViewHolderDownloadItem(downloadItemView, new CustomOnClickListener());
                 break;
             case SPACE:
                 View SpaceView = inflater.inflate(R.layout.view_holder_space, parent, false);
@@ -112,7 +113,7 @@ public class ComplexRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
                 configureViewHolderDropDown(vh2, position);
                 break;
             case DOWNLOADHEADING:
-                ViewHolderDownloadHeading viewHolderDownloadHeading  = (ViewHolderDownloadHeading) holder;
+                ViewHolderDownloadHeading viewHolderDownloadHeading = (ViewHolderDownloadHeading) holder;
                 configureViewHolderDownloadHeading(viewHolderDownloadHeading, position);
                 break;
             case DOWNLOADITEM:
@@ -182,10 +183,10 @@ public class ComplexRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
         private TextView textView;
         private CustomOnClickListener customOnClickListener;
 
-        public ViewHolderDownloadItem(View itemView,CustomOnClickListener customOnClickListener) {
+        public ViewHolderDownloadItem(View itemView, CustomOnClickListener customOnClickListener) {
             super(itemView);
             textView = (TextView) itemView.findViewById(R.id.download_item);
-            this.customOnClickListener =customOnClickListener;
+            this.customOnClickListener = customOnClickListener;
             textView.setOnClickListener(this.customOnClickListener);
 
         }
