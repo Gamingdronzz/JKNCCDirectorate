@@ -8,7 +8,8 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/registration_recyclerView"
         android:layout_width="match_parent"
-        android:background="@drawable/appbackground"
+        android:background="@color/colorOffWhite"
+        android:paddingBottom="@dimen/padding_medium"
         android:layout_height="match_parent"
         android:layout_marginBottom="?android:attr/actionBarSize">
 

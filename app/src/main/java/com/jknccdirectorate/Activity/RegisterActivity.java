@@ -45,9 +45,7 @@ public class RegisterActivity extends AppCompatActivity {
         ArrayList<Object> items = new ArrayList<>();
 
         items.add(new EditTextModel("Name",R.drawable.ic_action_person));
-        items.add(new DropdownModel("Cadre", cadreList));
-        items.add(new DropdownModel("Level", levelList));
-        items.add(new DropdownModel("Designation", designationList));
+
         items.add(new EditTextModel("Father Name",R.drawable.ic_action_person));
         items.add(new EditTextModel("Address",R.drawable.ic_action_address));
         items.add(new EditTextModel("Service Number",R.drawable.ic_action_settings));
@@ -55,6 +53,9 @@ public class RegisterActivity extends AppCompatActivity {
         items.add(new EditTextModel("Mobile Number",R.drawable.ic_action_contact));
         items.add(new EditTextModel("Machine Number",R.drawable.ic_action_machine));
         items.add(new DropdownModel("Monthly Income from all sources", monthlyIncomeList));
+        items.add(new DropdownModel("Cadre", cadreList));
+        items.add(new DropdownModel("Level", levelList));
+        items.add(new DropdownModel("Designation", designationList));
         items.add(new DropdownModel("Category", categoryList));
         items.add(new DropdownModel("Category", categoryList));
         return items;
